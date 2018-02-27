@@ -55,6 +55,7 @@ passport.use(
   new FacebookStrategy(
     {
       clientID: '351102655404907',
+      // clientID: process.env.FACEBOOK_APP_ID, ???
       clientSecret: 'a86ce1cc93a5a2e866f41146e2b70ad3',
       callbackURL: 'http://localhost:3000/api/auth/facebook/callback',
       // all fields: https://developers.facebook.com/docs/graph-api/reference/v2.10/user
@@ -70,8 +71,8 @@ passport.use(
           } else {
             const user = new User({
               // we need a username
-              username: profile.email,
-              name: profile.displayName,
+              mail: profile.email,
+              firstName: profile.displayName,
               facebookId: profile.id,
             });
             return user.save();
