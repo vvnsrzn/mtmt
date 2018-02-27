@@ -16,6 +16,11 @@ const matchSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Quizz'
   },
+  status: {
+    type: 'string',
+    required: true,
+    enum: ['pending', 'granted', 'refused']
+  },
   createdTime: {
     type: String,
     default: new Date(),

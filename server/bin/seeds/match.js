@@ -3,9 +3,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mtmt");
 const Match = require('../../models/match.js');
 
 let MatchDatas = [{
-  _id: '5a9531b39f3afa648038ab5d',
+  _id: '5a9531b39f3afa648038ab6a',
   _userA: '5a9531b39f3afa648038ab5d',
   _userB: '5a9531b39f3afa648038ab5e',
+  status: 'pendg',
   createdTime: new Date,
   average: '0.75',
   musicAnswer: 'LED ZEP',
