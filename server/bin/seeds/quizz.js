@@ -3,7 +3,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mtmt");
 const Quizz = require('../../models/quizz.js');
 
 let quizzDatas = [{
-  _id: 'yolo',
+  _id: '5a9531b39f3afa648038ab5d',
   treshold: 75,
   usersAnswered: [],
   musicQuestion: "Quel est ton groupe préféré ?",
