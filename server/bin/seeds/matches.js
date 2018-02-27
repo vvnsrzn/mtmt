@@ -6,7 +6,7 @@ let MatchDatas = [{
   _id: '5a9531b39f3afa648038ab6a',
   _userA: '5a9531b39f3afa648038ab5d',
   _userB: '5a9531b39f3afa648038ab5e',
-  status: 'pendg',
+  status: 'pending',
   createdTime: new Date,
   average: '0.75',
   musicAnswer: 'LED ZEP',
