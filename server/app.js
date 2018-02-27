@@ -12,7 +12,7 @@ const config = require('./config');
 const { Strategy, ExtractJwt } = require('passport-jwt');
 const FacebookStrategy = require('passport-facebook');
 
-mongoose.connect('mongodb://localhost/mtmt');
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
@@ -54,11 +54,9 @@ passport.use(strategy);
 passport.use(
   new FacebookStrategy(
     {
-      clientID: '351102655404907',
-      // clientID: process.env.FACEBOOK_APP_ID, ???
-      clientSecret: 'a86ce1cc93a5a2e866f41146e2b70ad3',
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: 'http://localhost:3000/api/auth/facebook/callback',
-      // all fields: https://developers.facebook.com/docs/graph-api/reference/v2.10/user
       profileFields: ['id', 'displayName', 'email'],
     },
     (accessToken, refreshToken, profile, cb) => {
