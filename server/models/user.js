@@ -4,17 +4,17 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   facebookId: {
     type: String,
-    required: true
+    // required: true
   },
   status: {
     type: String,
-    required: true,
+    // required: true,
     default: 'pending',
     enum: ['pending', 'granted', 'killed']
   },
   gender: {
     type: String,
-    required: true,
+    // required: true,
     enum: ['1', '2']
   },
   lookingFor: {
@@ -23,11 +23,11 @@ const userSchema = new Schema({
   },
   firstName: {
     type: String,
-    required: true,
+    // required: true,
   },
   age: {
     type: Number,
-    required: true,
+    // required: true,
     min: 18,
     max: 99,
   },
