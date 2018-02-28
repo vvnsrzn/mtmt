@@ -60,7 +60,6 @@ passport.use(
       profileFields: ['id', 'first_name', 'email'],
     },
     (accessToken, refreshToken, profile, cb) => {
-      console.log(profile)
       User.findOne({
         facebookId: profile.id,
       })
