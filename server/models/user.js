@@ -15,11 +15,14 @@ const userSchema = new Schema({
   gender: {
     type: String,
     // required: true,
-    enum: ['1', '2']
+    enum: ['male', 'female']
   },
   lookingFor: {
     type: String,
-    enum: ['1', '2']
+    enum: ['male', 'female']
+  },
+  range: {
+    type: Array, // min - max en objet
   },
   firstName: {
     type: String,
@@ -33,9 +36,9 @@ const userSchema = new Schema({
   },
   bio: {
     type: String,
-    maxlength: 280
+    maxlength: 280 // ?
   },
-  work: {
+  job: {
     type: String,
     maxlength: 70,
   },
@@ -47,17 +50,11 @@ const userSchema = new Schema({
     minlength: 10,
     maxlength: 12
   },
-  photos: [{
-    type: String,
-  }],
-  createdAt: {
-    type: String,
-    default: new Date(),
-  },
-  updatedAt: {
-    type: String,
-    default: new Date(),
-  }
+  photos: [
+    String,
+  ],
+}, {
+  timestamps: true
 });
 
 const User = mongoose.model('User', userSchema);
