@@ -57,9 +57,10 @@ passport.use(
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: 'http://localhost:3000/api/auth/facebook/callback',
-      profileFields: ['id', 'displayName', 'email'],
+      profileFields: ['id', 'first_name', 'email'],
     },
     (accessToken, refreshToken, profile, cb) => {
+      console.log(profile)
       User.findOne({
         facebookId: profile.id,
       })
@@ -68,9 +69,7 @@ passport.use(
             return user;
           } else {
             const user = new User({
-              // we need a username
-              mail: profile.email,
-              firstName: profile.displayName,
+              firstName: profile.name.givenName,
               facebookId: profile.id,
             });
             return user.save();
