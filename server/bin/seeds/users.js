@@ -12,8 +12,8 @@ let userDatas = [
     age: 29,
     bio: 'Lorem ipsum dolor sit amet',
     work: 'Student @Ironhack',
-    mail: 'vivian.sarazin@gmail.com',
-    phone: '0667721670',
+    mail: 'yolo@yolo.com',
+    phone: '0667721671',
     photos: 'https://lh3.googleusercontent.com/-QRfzdXqbRk0/AAAAAAAAAAI/AAAAAAAARKU/0mVuCX8pVhM/s60-p-rw-no/photo.jpg',
   }
 ]
