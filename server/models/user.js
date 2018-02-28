@@ -22,7 +22,16 @@ const userSchema = new Schema({
     enum: ['male', 'female']
   },
   range: {
-    type: Array, // min - max en objet
+    min: {
+      type: Number,
+      min: 18,
+      max: 99,
+    },
+    max: {
+      type: Number,
+      min: 18,
+      max: 99,
+    },
   },
   firstName: {
     type: String,
@@ -36,7 +45,7 @@ const userSchema = new Schema({
   },
   bio: {
     type: String,
-    maxlength: 280 // ?
+    maxlength: 280
   },
   job: {
     type: String,
