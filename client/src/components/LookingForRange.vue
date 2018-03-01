@@ -13,7 +13,7 @@
   export default {
     data() {
       return {
-        value9: [4, 8]
+        value9: [26, 38]
       }
     },
     name: 'LookingForRange'

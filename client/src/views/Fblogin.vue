@@ -1,11 +1,24 @@
 <template>
   <div>
     <p>
-      Bonjour {{firstName}}, <br />
+      Bonjour {{firstName}} (id: {{id}}), <br />
       bienvenue sur MTMT <br /> le swipe réinventé
     </p>
     <p>Choisis toi une photo de profil</p>
-    <input type="file"><button v-on:click="uploadPicture">Send</button>
+    <form>
+    <b-upload v-model="files">
+            <a class="button is-primary">
+                <b-icon icon="upload"></b-icon>
+                <span>Click to upload</span>
+            </a>
+        </b-upload>
+        <div v-if="files && files.length">
+            <span class="file-name">
+                {{ files[0].name }}
+            </span>
+        </div>
+        <button class="button is-primary">Signup</button>
+        </form>
   </div>
 </template>
 
@@ -13,10 +26,21 @@
 import api from '../api';
 
 export default {
+  data: function() {
+    return {
+      error: null,
+      files: [],
+      photos: '',
+      id: this.$route.query.id,
+      firstName: this.$route.query.firstName
+    }
+  },
   methods: {
-  uploadPicture: function () {
+  uploadPicture(id) {
     api
-      .upload()
+      .uploadPicture({
+        photos: this.files[0],
+      })
       .then((data) => {
           debugger
           this.$router.push('/lookingfor');
@@ -24,12 +48,6 @@ export default {
       .catch(err => {
           this.error = err;
         });
-    }
-  },
-  data: function() {
-    return {
-      photos: '',
-      firstName: this.$route.query.firstName
     }
   },
 }

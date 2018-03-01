@@ -27,13 +27,14 @@ export default {
       })
   },
 
-  uploadPicture() {
+  uploadPicture(id) {
     return mtmt
-    .post(``)
-    .then(res => res.data)
-    .catch(err => {
-      console.error(err);
-      throw err
-    })
+    console.log('oooo')
+      .post(`/profile`)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
   }
 }
