@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <!-- <section>
         <b-field>
             <b-radio-button 
                 v-model="lookingForGender"
@@ -20,7 +20,7 @@
             <b>Selection:</b>
             {{ lookingForGender }}
         </p>
-    </section>
+    </section> -->
 </template>
 
 <script>
@@ -32,7 +32,7 @@
         },
         methods: {
           setLookingForGender() {
-            console.log(this.$emit)
+            this.$emit('yolo')
           }
         }
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="block">
+  <!-- <div class="block">
       {{ range }}
       <el-slider
         v-model="range"
@@ -8,7 +8,7 @@
         :min="18"
         :max="100">
       </el-slider>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -16,8 +16,7 @@
     
     data: function() {
       return {
-        range: [26, 38],
-        // lookingFor: "",
+        // range: [26, 38],
       }
     },
     name: 'LookingForRange',
