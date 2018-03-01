@@ -5,7 +5,7 @@
       bienvenue sur MTMT <br /> le swipe réinventé
     </p>
     <p>Choisis toi une photo de profil</p>
-    <form @submit.prevent="uploadPicture">
+    <form @submit.prevent="(e) => {uploadPicture(e)}">
     <b-upload v-model="files">
             <a class="button is-primary">
                 <b-icon icon="upload"></b-icon>
@@ -36,10 +36,11 @@ export default {
     }
   },
   methods: {
-  uploadPicture(id) {
+  uploadPicture(e) {
+    console.log('client_id', this.id)
     api
       .uploadPicture({
-        _id: id,
+        _id: this.id,
         photos: this.files[0],
       })
       .then((data) => {

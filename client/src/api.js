@@ -27,11 +27,11 @@ export default {
       })
   },
 
-  uploadPicture(id) {
+  uploadPicture(obj) {
     const formData = new FormData();
-    Object.keys(id).forEach(key => formData.append(key, id[key]));
+    Object.keys(obj).forEach(key => formData.append(key, obj[key]));
     return mtmt
-      .post(`/profile`, formData, {
+      .post(`/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }

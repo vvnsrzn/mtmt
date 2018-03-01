@@ -10,28 +10,31 @@ const cloudinary = require('cloudinary');
 var cloudinaryStorage = require('multer-storage-cloudinary');
 
 // upload images
-var storage = cloudinaryStorage({
-  cloudinary: cloudinary,
-  folder: 'folder-name',
-  allowedFormats: ['jpg', 'png'],
-  filename: function (req, file, cb) {
-    cb(undefined, 'my-file-name');
-  }
-});
+var storage = multer.diskStorage({
+  destination: 'public/images',
+})
 
-var parser = multer({
+var upload = multer({
   storage: storage
-});
+})
 
-router.get('/upload', parser.single('picture'), function (req, res) {
-  res.json({
-    message: 'hello'
-  });
-});
+router.post('/upload', upload.single('photos'), function (req, res, next) {
+  // console.log(req.body)
+  const {
+    _id,
+  } = req.body;
 
-router.patch('/upload', parser.single('picture'), function (req, res) {
-  console.log(req.files);
-  res.json(req.files);
+  console.log('photos ', req.file)
+
+
+  User.findByIdAndUpdate(_id, {
+    photos: req.file.path
+  }, err => {
+    if (err) return next(err);
+    res.json({
+      success: true
+    })
+  })
 });
 
 ////////////////////////////////////
