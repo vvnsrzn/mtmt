@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Signup from './views/Signup.vue'
 import Fblogin from './views/Fblogin.vue'
+import LookingForRange from './views/Lookingfor.vue'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
     {
       path: '/auth/facebook/callback',
       component: Fblogin
+    },
+    {
+      path: '/lookingfor',
+      component: LookingForRange
     }
+
   ]
 })

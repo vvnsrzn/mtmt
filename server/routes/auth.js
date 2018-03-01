@@ -4,14 +4,32 @@ const passport = require('passport');
 const router = express.Router();
 const User = require('../models/user');
 const config = require('../config');
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+var cloudinaryStorage = require('multer-storage-cloudinary');
+
+// upload images
+var storage = cloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: 'folder-name',
+  allowedFormats: ['jpg', 'png'],
+  filename: function (req, file, cb) {
+    cb(undefined, 'my-file-name');
+  }
+});
+ 
+var parser = multer({ storage: storage });
+ 
+router.post('/upload', parser.single('picture'), function (req, res) {
+  console.log(req.files);
+  res.json(req.files);
+});
+
+////////////////////////////////////
 
 router.get(
   '/auth/facebook',
-  passport.authenticate('facebook'
-    // ,(req, res) => {
-    //     console.log(res)
-    //   }
-  ));
+  passport.authenticate('facebook'));
 
 router.get(
   '/auth/facebook/callback',
@@ -20,12 +38,14 @@ router.get(
     session: false
   }),
   (req, res) => {
-    console.log(req.user);
+    // console.log(req.user.firstName);
     const payload = {
       id: req.user.id,
+      firstName: req.user.firstName
     };
     const token = jwt.encode(payload, config.jwtSecret);
-    res.redirect(`http://localhost:8080/auth/facebook/callback?token=${token}`);
+    console.log(payload.firstName);
+    res.redirect(`http://localhost:8080/auth/facebook/callback?token=${token}&firstName=${payload.firstName}`);
   }
 );
 

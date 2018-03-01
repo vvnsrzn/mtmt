@@ -25,5 +25,15 @@ export default {
         console.error(err);
         throw err
       })
+  },
+
+  uploadPicture() {
+    return mtmt
+    .post(``)
+    .then(res => res.data)
+    .catch(err => {
+      console.error(err);
+      throw err
+    })
   }
 }
