@@ -9,7 +9,10 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const User = require('./models/user');
 const config = require('./config');
-const { Strategy, ExtractJwt } = require('passport-jwt');
+const {
+  Strategy,
+  ExtractJwt
+} = require('passport-jwt');
 const FacebookStrategy = require('passport-facebook');
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -20,12 +23,13 @@ const app = express();
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 app.use(passport.initialize());
 // Create the strategy for JWT
-const strategy = new Strategy(
-  {
+const strategy = new Strategy({
     // this is a config we pass to the strategy
     // it needs to secret to decrypt the payload of the
     // token.
@@ -52,8 +56,7 @@ const strategy = new Strategy(
 passport.use(strategy);
 
 passport.use(
-  new FacebookStrategy(
-    {
+  new FacebookStrategy({
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: 'http://localhost:3000/api/auth/facebook/callback',
@@ -61,8 +64,8 @@ passport.use(
     },
     (accessToken, refreshToken, profile, cb) => {
       User.findOne({
-        facebookId: profile.id,
-      })
+          facebookId: profile.id,
+        })
         .then(user => {
           if (user) {
             return user;
