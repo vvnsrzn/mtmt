@@ -24,9 +24,6 @@ router.post('/upload', upload.single('photos'), function (req, res, next) {
     _id,
   } = req.body;
 
-  console.log('photos ', req.file)
-
-
   User.findByIdAndUpdate(_id, {
     photos: req.file.path
   }, err => {
@@ -60,5 +57,25 @@ router.get(
     res.redirect(`http://localhost:8080/auth/facebook/callback?token=${token}&firstName=${payload.firstName}&id=${payload.id}`);
   }
 );
+
+router.post(
+  '/lookingfor',
+  function (req, res, next) {
+
+    const {
+      _id,
+    } = req.body;
+
+    User.findByIdAndUpdate(_id, {
+      range: req.body.range,
+      lookingfor: req.body.lookingfor
+    }, err => {
+      if (err) return next(err);
+      res.json({
+        success: true
+      })
+    })
+  }
+)
 
 module.exports = router;

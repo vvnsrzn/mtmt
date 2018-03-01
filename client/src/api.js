@@ -41,5 +41,16 @@ export default {
         console.error(err);
         throw err
       })
+  },
+
+  lookingFor(datas) {
+    return mtmt
+      .post(`/lookingfor`, datas, {})
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
   }
+
 }
