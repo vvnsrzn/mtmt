@@ -43,7 +43,7 @@ export default {
       })
   },
 
-  lookingFor(datas) {
+  setLookingFor(datas) {
     return mtmt
       .post(`/lookingfor`, datas, {})
       .then(res => res.data)

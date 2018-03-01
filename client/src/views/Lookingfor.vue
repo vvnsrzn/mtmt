@@ -40,14 +40,8 @@
 
 <script>
 import api from '../api';
-// import LookingForGender from '@/components/LookingForGender.vue'
-// import LookingForRange from '@/components/LookingForRange.vue'
   export default {
     name: 'lookingforrange',
-    // components: {
-    //   LookingForRange,
-    //   LookingForGender,
-    // },
     data () {
       return {
         lookingForAge: [26, 38],
@@ -57,9 +51,17 @@ import api from '../api';
     },
     methods: {
     setLookingFor () {
-        // console.log(this.$emit);
-        console.log(this.lookingForGender);
-        console.log(this.lookingForAge);
+        api
+          .setLookingFor({
+            range: this.lookingForAge,
+            gender: this.lookingForGender
+          })
+          .then((data) => {
+          this.$router.push('/about');
+          })
+          .catch(err => {
+          this.error = err;
+        });
       }
     }
 

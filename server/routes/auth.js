@@ -61,9 +61,10 @@ router.get(
 router.post(
   '/lookingfor',
   function (req, res, next) {
-
+    console.log(req.body)
     const {
-      _id,
+      range,
+      gender
     } = req.body;
 
     User.findByIdAndUpdate(_id, {
