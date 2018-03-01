@@ -37,14 +37,12 @@ export default {
   },
   methods: {
   uploadPicture(e) {
-    console.log('client_id', this.id)
     api
       .uploadPicture({
         _id: this.id,
         photos: this.files[0],
       })
       .then((data) => {
-          debugger
           this.$router.push('/lookingfor');
         })
       .catch(err => {
