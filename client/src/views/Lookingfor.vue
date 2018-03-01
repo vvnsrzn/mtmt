@@ -26,7 +26,7 @@
       <div class="block container">
       {{ lookingForAge }}
         <el-slider
-          v-model="range"
+          v-model="lookingForAge"
           range
           show-stops
           :min="18"
@@ -46,13 +46,15 @@ import api from '../api';
       return {
         lookingForAge: [26, 38],
         lookingForGender: 'male',
-        range: [26, 38],        
+        range: [26, 38],
+        id: '' // How to get the user id?        
       }
     },
     methods: {
     setLookingFor () {
         api
           .setLookingFor({
+            id: '5a97f51fb1d58f12cdb3618f',
             range: this.lookingForAge,
             gender: this.lookingForGender
           })

@@ -16,8 +16,6 @@ import Signup from '@/components/Signup.vue'
 export default {
   data () {
     return {
-      // facebookId: '',
-      // firstName: '',
       error: null,
     };
   },
@@ -25,8 +23,6 @@ export default {
       signup() {
         api
         .signup(
-          // facebookId: this.facebookId,
-          // firstName: this.firstName
         )
         .then((data) => {
           debugger
@@ -38,13 +34,10 @@ export default {
       }
     },
 
-
-
   name: 'signup',
   components: {
     Signup
   }
 }
   
-
 </script>
