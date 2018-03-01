@@ -28,9 +28,14 @@ export default {
   },
 
   uploadPicture(id) {
+    const formData = new FormData();
+    Object.keys(id).forEach(key => formData.append(key, id[key]));
     return mtmt
-    console.log('oooo')
-      .post(`/profile`)
+      .post(`/profile`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        }
+      })
       .then(res => res.data)
       .catch(err => {
         console.error(err);

@@ -4,6 +4,7 @@ const passport = require('passport');
 const router = express.Router();
 const User = require('../models/user');
 const config = require('../config');
+
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 var cloudinaryStorage = require('multer-storage-cloudinary');
@@ -17,10 +18,18 @@ var storage = cloudinaryStorage({
     cb(undefined, 'my-file-name');
   }
 });
- 
-var parser = multer({ storage: storage });
- 
-router.post('/upload', parser.single('picture'), function (req, res) {
+
+var parser = multer({
+  storage: storage
+});
+
+router.get('/upload', parser.single('picture'), function (req, res) {
+  res.json({
+    message: 'hello'
+  });
+});
+
+router.patch('/upload', parser.single('picture'), function (req, res) {
   console.log(req.files);
   res.json(req.files);
 });
@@ -45,7 +54,7 @@ router.get(
     };
     const token = jwt.encode(payload, config.jwtSecret);
     console.log(payload.firstName);
-    res.redirect(`http://localhost:8080/auth/facebook/callback?token=${token}&firstName=${payload.firstName}`);
+    res.redirect(`http://localhost:8080/auth/facebook/callback?token=${token}&firstName=${payload.firstName}&id=${payload.id}`);
   }
 );
 
