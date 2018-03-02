@@ -11,15 +11,19 @@
             </b-field>
         </form>
     </div>
-    <div>
-      
-      <ul>
-        <li v-for="artist in artists">
-          <!-- {{ artist. name }} -->
-           <button class="button" @click.prevent="sendArtist" >{{ artist.name }} </button>
-        </li>  
-      </ul>
-
+    <div class="columns is-multiline">
+      <div class="column is-one-quarter" v-for="artist in artists">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img v-if="artist.images[0]" v-bind:src=artist.images[0].url alt="Placeholder image">
+              <img v-else src="https://placehold.it/600x600" alt="Placeholder image">
+            </figure>
+          </div>
+          <button class="button" @click.prevent="sendArtist" >{{ artist.name }} </button>
+        </div>
+      </div>
+      </div>  
     </div>  
 </div>    
 </template>
