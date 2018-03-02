@@ -23,12 +23,7 @@ app.get('/artist/:id', (req, res, next) => {
     console.log(req.params)
     spotifyApi.searchArtists(req.params.id)
         .then(function (data) {
-            res.json({
-                name: req.query.artist,
-                songs: data.body.artists.items,
-                href: data.body.artists.href,
-                artists: data
-            });
+            res.json(data);
         }, function (err) {
             console.error(err);
         });
