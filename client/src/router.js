@@ -5,6 +5,8 @@ import About from './views/About.vue'
 import Signup from './views/Signup.vue'
 import Fblogin from './views/Fblogin.vue'
 import LookingForRange from './views/Lookingfor.vue'
+import QuizzInfo from './views/QuizzInfo.vue'
+
 
 Vue.use(Router)
 
@@ -32,7 +34,10 @@ export default new Router({
     {
       path: '/lookingfor',
       component: LookingForRange
-    }
-
+    },
+    {
+      path: '/quizz-info',
+      component: QuizzInfo
+    },
   ]
 })

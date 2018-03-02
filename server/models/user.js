@@ -17,11 +17,11 @@ const userSchema = new Schema({
     // required: true,
     enum: ['male', 'female']
   },
-  lookingFor: {
+  lookingForGender: {
     type: String,
     enum: ['male', 'female']
   },
-  range: {
+  lookingForRange: {
     min: {
       type: Number,
       min: 18,

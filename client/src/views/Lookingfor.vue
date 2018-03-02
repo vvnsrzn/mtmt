@@ -54,12 +54,12 @@ import api from '../api';
     setLookingFor () {
         api
           .setLookingFor({
-            id: '5a97f51fb1d58f12cdb3618f',
+            id: '5a990ebea0552c1dfd2a13e4',
             range: this.lookingForAge,
             gender: this.lookingForGender
           })
           .then((data) => {
-          this.$router.push('/about');
+          this.$router.push('/quizz-info');
           })
           .catch(err => {
           this.error = err;

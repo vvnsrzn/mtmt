@@ -69,8 +69,8 @@ router.post(
     console.log(req.body)
 
     User.findByIdAndUpdate(id, {
-      range: req.body.range,
-      gender: req.body.gender
+      lookingForRange: req.body.range,
+      lookingForGender: req.body.gender
     }, err => {
       if (err) return next(err);
       res.json({

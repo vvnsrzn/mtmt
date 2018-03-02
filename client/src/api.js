@@ -45,7 +45,7 @@ export default {
 
   setLookingFor(datas) {
     return mtmt
-      .post(`/lookingfor`, datas, {})
+      .post(`/lookingfor`, datas)
       .then(res => res.data)
       .catch(err => {
         console.error(err);
