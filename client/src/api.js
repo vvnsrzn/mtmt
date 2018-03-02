@@ -51,6 +51,12 @@ export default {
         console.error(err);
         throw err
       })
+  },
+
+  getMusic(datas) {
+
+      .get
   }
+
 
 }
