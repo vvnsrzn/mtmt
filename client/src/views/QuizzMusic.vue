@@ -12,11 +12,14 @@
         </form>
     </div>
     <div>
+      
       <ul>
         <li v-for="artist in artists">
-           {{ artist.name }}
+          <!-- {{ artist. name }} -->
+           <button class="button" @click.prevent="sendArtist" >{{ artist.name }} </button>
         </li>  
       </ul>
+
     </div>  
 </div>    
 </template>
@@ -36,10 +39,14 @@ import api from '../api';
         api.getMusic(this.search)
         .then((artists) => {
           this.artists = artists.body.artists.items
+          console.log(this.artists)
         })
         .catch(err => {
           this.error = err;
         });
+      },
+      sendArtist() {
+        console.log(this.artist)
       }
     }
 }
