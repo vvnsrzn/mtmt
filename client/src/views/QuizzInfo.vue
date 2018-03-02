@@ -5,7 +5,7 @@
 <p>Blabla blaBlabla blaBlabla blaBlabla blaBlabla blaBlabla bla</p>
 <p>Blabla blaBlabla blaBlabla blaBlabla blaBlabla blaBlabla bla</p>
 <p>Blabla blaBlabla blaBlabla blaBlabla blaBlabla blaBlabla bla</p>
-<button class="button">Click</button>
+<router-link to="/quizz-music"><button class="button">Click</button></router-link>
 </div>
 </template>
 
