@@ -2,7 +2,7 @@
 <div class="container">
   <img src="https://lh3.googleusercontent.com/D_04_AQH-II9TyLU26GDtFxPZohYWbl-SGKb1msbi5XlIGMAEr0HI01RvZ7Afi5BzQ=w300">
   <h2>Quel est ton groupe préféré ?</h2>
-  <p>{{ search }}</p>
+  <form>
   <b-field>
     <b-input 
         placeholder="Search..."
@@ -11,14 +11,29 @@
         icon="magnify">
     </b-input>
   </b-field>
+  <button class="button" @click.prevent="getMusic">Submit</button>
+  </form>
 </div>
 </template>
 
 <script>
+import api from '../api';
+
   export default {
     data () {
       return {
         search: ""
+      }
+    },
+    methods: {
+      getMusic() {
+        api.getMusic(this.search)
+        .then((data) => {
+          this.$router.push('/about');
+        })
+        .catch(err => {
+          this.error = err;
+        });
       }
     }
 }

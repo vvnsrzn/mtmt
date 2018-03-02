@@ -4,6 +4,10 @@ const mtmt = axios.create({
   baseURL: process.env.API_URL || 'http://localhost:3000/api',
 });
 
+const spotify = axios.create({
+  baseURL: process.env.API_URL || 'http://localhost:3000/spotify',
+});
+
 const errHandler = err => {
   console.error(err.response.data);
   throw err.response.data;
@@ -17,15 +21,15 @@ export default {
       .catch(errHandler);
   },
 
-  getProfile(_id) {
-    return mtmt
-      .get(`/profile/${_id}`)
-      .then(res => res.data)
-      .catch(err => {
-        console.error(err);
-        throw err
-      })
-  },
+  // getProfile(_id) {
+  //   return mtmt
+  //     .get(`/profile/${_id}`)
+  //     .then(res => res.data)
+  //     .catch(err => {
+  //       console.error(err);
+  //       throw err
+  //     })
+  // },
 
   uploadPicture(obj) {
     const formData = new FormData();
@@ -53,9 +57,14 @@ export default {
       })
   },
 
-  getMusic(datas) {
-
-      .get
+  getMusic(query) {
+    return spotify
+      .get(`/artist/${query}`)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
   }
 
 

@@ -86,9 +86,11 @@ passport.use(
 
 const index = require('./routes/index');
 const authRoutes = require('./routes/auth');
+const spotify = require('./routes/spotify');
 
 app.use('/', index);
 app.use('/api', authRoutes);
+app.use('/spotify', spotify);
 
 // This is an example of protected route
 app.get(
