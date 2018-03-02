@@ -57,12 +57,12 @@ import api from '../api';
       },
 
 
-      sendArtist(message) {
-        console.log(message)
+      sendArtist(artist) {
+        console.log(artist)
         api
         .sendArtist({
-          id: '5a990ebea0552c1dfd2a13e4',
-          artist: this.artist
+          _id: '5a990ebea0552c1dfd2a13e4',
+          artist: artist
         })
         .then((data) => {
           // this.$router.push('/quizz-info');

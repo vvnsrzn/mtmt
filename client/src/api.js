@@ -65,6 +65,16 @@ export default {
         console.error(err);
         throw err
       })
+  },
+
+  sendArtist(datas) {
+    return mtmt
+      .post(`/quizzmusic`, datas)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
   }
 
 
