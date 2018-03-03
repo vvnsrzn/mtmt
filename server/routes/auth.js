@@ -58,26 +58,4 @@ router.get(
   }
 );
 
-router.post(
-  '/lookingfor',
-  function (req, res, next) {
-    const {
-      id,
-      range,
-      gender,
-    } = req.body;
-    console.log(req.body)
-
-    User.findByIdAndUpdate(id, {
-      lookingForRange: req.body.range,
-      lookingForGender: req.body.gender
-    }, err => {
-      if (err) return next(err);
-      res.json({
-        success: true
-      })
-    })
-  }
-)
-
 module.exports = router;

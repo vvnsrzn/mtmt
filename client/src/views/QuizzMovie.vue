@@ -32,7 +32,6 @@
         </div>
         </div>
       </div>
-      <pre>{{movies}}</pre>
       </div>  
     </div>  
 </div>    
@@ -73,7 +72,7 @@ import api from '../api';
         })
         .then((data) => {
           console.log(data)
-          // this.$router.push('/quizz-movie');
+          this.$router.push('/quizz-character-traits');
           })
           .catch(err => {
           this.error = err;

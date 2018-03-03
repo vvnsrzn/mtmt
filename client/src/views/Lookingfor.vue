@@ -2,29 +2,42 @@
   <div>
     <form  @submit.prevent="setLookingFor">
       <section class="container">
+          <h3>Je suis un.e</h3>
+        <b-field>
+            <b-radio-button 
+                v-model="gender"
+                native-value="male"
+                type="is-danger">
+                <span>Homme</span>
+            </b-radio-button>
+
+            <b-radio-button 
+                v-model="gender"
+                native-value="female"
+                type="is-success">
+                <span>Femme</span>
+            </b-radio-button>
+
+        </b-field>
+          <h3>Je recherche un.e</h3>
         <b-field>
             <b-radio-button 
                 v-model="lookingForGender"
                 native-value="male"
                 type="is-danger">
-                <span>Hommes</span>
+                <span>Homme</span>
             </b-radio-button>
 
             <b-radio-button 
                 v-model="lookingForGender"
                 native-value="female"
                 type="is-success">
-                <span>Femmes</span>
+                <span>Femme</span>
             </b-radio-button>
 
         </b-field>
-        <p class="content">
-            <b>Selection:</b>
-            {{ lookingForGender }}
-        </p>
-      </section>
       <div class="block container">
-      {{ lookingForAge }}
+      Entre {{ lookingForAge[0] }} et {{ lookingForAge[1] }} printemps
         <el-slider
           v-model="lookingForAge"
           range
@@ -34,6 +47,7 @@
         </el-slider>
       </div>
     <button class="button is-primary">Next</button>      
+      </section>
     </form>
   </div>
 </template>
@@ -44,6 +58,7 @@ import api from '../api';
     name: 'lookingforrange',
     data () {
       return {
+        gender: 'male',
         lookingForAge: [26, 38],
         lookingForGender: 'male',
         range: [26, 38],
@@ -54,9 +69,10 @@ import api from '../api';
     setLookingFor () {
         api
           .setLookingFor({
-            id: '5a990ebea0552c1dfd2a13e4',
+            id: '5a9aab1bad473d25a962900f',
+            gender: this.gender,
             range: this.lookingForAge,
-            gender: this.lookingForGender
+            lookingForGender: this.lookingForGender
           })
           .then((data) => {
           this.$router.push('/quizz-info');

@@ -21,6 +21,28 @@ router.post('/profile', upload.single('photo'), function (req, res, next) {
     });
 });
 
+router.post('/api/lookingfor', function (req, res, next) {
+    const {
+      id,
+      gender,
+      range,
+      lookingForGender,
+    } = req.body;
+    console.log(req.body.gender)
+
+    User.findByIdAndUpdate(id, {
+      gender: req.body.gender,
+      lookingForRange: req.body.range,
+      lookingForGender: req.body.lookingForGender
+    }, err => {
+      if (err) return next(err);
+      res.json({
+        success: true
+      })
+    })
+  }
+)
+
 router.post('/api/quizzmusic', function( req, res, next) {
   console.log(req.body)
   Quizz.findByIdAndUpdate(req.body._id, {
