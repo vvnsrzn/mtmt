@@ -7,6 +7,7 @@ import Fblogin from './views/Fblogin.vue'
 import LookingForRange from './views/Lookingfor.vue'
 import QuizzInfo from './views/QuizzInfo.vue'
 import QuizzMusic from './views/QuizzMusic.vue'
+import QuizzMovie from './views/QuizzMovie.vue'
 
 
 Vue.use(Router)
@@ -43,6 +44,10 @@ export default new Router({
     {
       path: '/quizz-music',
       component: QuizzMusic
+    },
+    {
+      path: '/quizz-movie',
+      component: QuizzMovie
     },
   ]
 })

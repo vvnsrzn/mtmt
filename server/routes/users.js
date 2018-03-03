@@ -21,15 +21,25 @@ router.post('/profile', upload.single('photo'), function (req, res, next) {
     });
 });
 
-router.post('/quizzmusic', function( req, res, next) {
-  Quizz.findByIdAndUpdate(req.quizz._id, {
-    musicAnswer: req.artist
+router.post('/api/quizzmusic', function( req, res, next) {
+  console.log(req.query._id)
+  Quizz.findByIdAndUpdate(req.query._id, {
+    music: {
+      answer: req.query.artist,
+      hint: req.query.hint
+    },
   },
-  (err, user) => {
+  {
+    upsert: true
+  },
+  (err, quizz) => {
     if (err) {
       next(err);
     } else {
-      res.redirect(`http://localhost:8080/lookingfor`);
+      // console.log(quizz)
+      res.json({
+        message: 'bravo patrick'
+      })
     }
   });
 })

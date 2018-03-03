@@ -1,11 +1,11 @@
 import axios from 'axios'
 
 const mtmt = axios.create({
-  baseURL: process.env.API_URL || 'http://localhost:3000/api',
+  baseURL: process.env.API_MAIN_URL || 'http://localhost:3000/api',
 });
 
 const spotify = axios.create({
-  baseURL: process.env.API_URL || 'http://localhost:3000/spotify',
+  baseURL: process.env.API_SPOTIFY_URL || 'http://localhost:3000/spotify',
 });
 
 const errHandler = err => {
