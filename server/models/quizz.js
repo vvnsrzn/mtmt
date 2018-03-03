@@ -26,17 +26,17 @@ const quizzSchema = new Schema({
       type: Array
     }
   },
-  venue: {
-    answer: {
-      type: String,
-    },
-    hint: {
-      type: String,
-    },
-    badResponses: {
-      type: Array
-    }
-  },
+  // venue: {
+  //   answer: {
+  //     type: String,
+  //   },
+  //   hint: {
+  //     type: String,
+  //   },
+  //   badResponses: {
+  //     type: Array
+  //   }
+  // },
   movie: {
     answer: {
       type: String,
@@ -48,17 +48,41 @@ const quizzSchema = new Schema({
       type: Array
     }
   },
-  book: {
-    answer: {
-      type: String,
+  // book: {
+  //   answer: {
+  //     type: String,
+  //   },
+  //   hint: {
+  //     type: String,
+  //   },
+  //   badResponses: {
+  //     type: Array
+  //   }
+  // },
+  traits: {
+    quality: {
+      answer: {
+        type: String,
+      },
+      hint: {
+        type: String,
+      },
+      badResponses: {
+        type: Array
+      }
     },
-    hint: {
-      type: String,
+    defect: {
+      answer: {
+        type: String,
+      },
+      hint: {
+        type: String,
+      },
+      badResponses: {
+        type: Array
+        }
+      },
     },
-    badResponses: {
-      type: Array
-    }
-  },
 });
 
 const Quizz = mongoose.model('Quizz', quizzSchema);

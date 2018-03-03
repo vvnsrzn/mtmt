@@ -78,7 +78,8 @@ import api from '../api';
           .catch(err => {
           this.error = err;
         });
-      }
+      },
+
     }
 }
 </script>

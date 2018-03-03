@@ -93,4 +93,15 @@ export default {
       })
   },
 
+  sendTraits(datas) {
+    console.log(datas)
+    return mtmt
+      .post(`/sendtraits`, datas)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
+  }
+
 }

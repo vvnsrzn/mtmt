@@ -21,7 +21,7 @@
           <b-input rounded placeholder="Un indice peut être ?" v-model="qualityHint" type="text">
           </b-input>
         </b-field>
-                <p v-if="qualitySelected" >J'en étais sûr que tu étais {{ qualitySelected}}</p>
+                <p v-if="qualitySelected" >J'en étais sûr que tu étais {{ qualitySelected }}</p>
         
       </section>
       <!-- -->
@@ -40,7 +40,7 @@
 
         </b-field>
         <b-field>
-          <b-input rounded placeholder="Un indice peut être ?" v-model="qualityHint" type="text">
+          <b-input rounded placeholder="Un indice peut être ?" v-model="defectHint" type="text">
           </b-input>
         </b-field>
                 <p v-if="defectSelected" >J'en étais sûr que tu étais {{ defectSelected}}</p>
@@ -48,14 +48,16 @@
       </section>
       <!-- -->
         <div>
-            <button class="button is-danger">Finaliser</button>
+            <button class="button is-danger" @click.prevent="sendTraits" >Finaliser</button>
         </div>
     </div>
   </div>
 </template>
 
 <script>
-import quality from '../quality'
+import quality from '../quality';
+import api from '../api';
+
     export default {
         data() {
             return {
@@ -277,6 +279,29 @@ import quality from '../quality'
                 defectSelected: null,
             }
         },
+        methods: {
+            sendTraits() {
+                api
+                .sendTraits({
+                    _id: '5a990ebea0552c1dfd2a13e4',
+                    quality: {
+                        answer: this.name,
+                        hint: this.qualityHint    
+                    },
+                    defect: {
+                        answer: this.name2,
+                        hint: this.defectHint
+                    }
+                })
+                .then((data) => {
+                    // console.log(data)
+                    this.$router.push('/quizz-movie');
+                    })
+                    .catch(err => {
+                    this.error = err;
+                    });
+            }
+        },
         computed: {
             filteredDataArrayQuality() {
                 return this.quality.filter((option) => {
@@ -291,7 +316,7 @@ import quality from '../quality'
                     return option
                         .toString()
                         .toLowerCase()
-                        .indexOf(this.name.toLowerCase()) >= 0
+                        .indexOf(this.name2.toLowerCase()) >= 0
                 })
             }
         }

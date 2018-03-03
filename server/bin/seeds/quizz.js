@@ -11,21 +11,21 @@ let quizzDatas = [{
     hint: '',
     badResponses: ['NTM', 'IAM', 'DIRE STRAITS']
   },
-  venue: {
-    answer: 'LED ZEP',
-    hint: '',
-    badResponses: ['NTM', 'IAM', 'DIRE STRAITS']
-  },
   movie: {
     answer: 'LED ZEP',
     hint: '',
     badResponses: ['NTM', 'IAM', 'DIRE STRAITS']
   },
-  book: {
-    answer: 'LED ZEP',
-    hint: '',
-    badResponses: ['NTM', 'IAM', 'DIRE STRAITS']
-  },
+  traits : {
+    quality: {
+      answer: 'Gentil',
+      hint: 'Spirou',
+    },
+    defect: {
+      answer: 'Méchant',
+      hint: 'Fantasio',
+    }
+  }
 }];
 
 Quizz.create(quizzDatas, (err, quizz) => {
