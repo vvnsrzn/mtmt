@@ -80,7 +80,6 @@ router.post('/api/quizzmovie', function( req, res, next) {
     if (err) {
       next(err);
     } else {
-      // console.log(quizz)
       res.json({
         message: 'bravo patrick'
       })
@@ -89,29 +88,29 @@ router.post('/api/quizzmovie', function( req, res, next) {
 })
 
 router.post('/api/sendtraits', function( req, res, next) {
-  // console.log(req.body.quality.answer)
+  console.log('server', req.body.traits.quality)
   Quizz.findByIdAndUpdate(req.body._id, {
     traits : {
       quality: {
-        answer: req.body.quality.answer,
-        hint: req.body.quality.hint   
+        answer: req.body.traits.quality.answer,
+        hint: req.body.traits.quality.hint   
       },
       defect: {
-        answer: req.body.defect.answer,
-        hint: req.body.defect.hint
+        answer: req.body.traits.defect.answer,
+        hint: req.body.traits.defect.hint
       },
-    }
+    },
   }),
   {
     upsert: true
   },
-  (err, quizz) => {
+  (err, traits) => {
     if (err) {
+      console.log('quizz')      
       next(err);
     } else {
-      console.log(quizz)
       res.json({
-        message: 'bravo patrick'
+        message: 'bravo patrick!'
       })
     }
   };

@@ -284,13 +284,15 @@ import api from '../api';
                 api
                 .sendTraits({
                     _id: '5a990ebea0552c1dfd2a13e4',
-                    quality: {
-                        answer: this.name,
-                        hint: this.qualityHint    
+                    traits: {
+                        quality: {
+                            answer: this.name,
+                            hint: this.qualityHint    
                     },
-                    defect: {
-                        answer: this.name2,
-                        hint: this.defectHint
+                        defect: {
+                            answer: this.name2,
+                            hint: this.defectHint
+                        }
                     }
                 })
                 .then((data) => {
