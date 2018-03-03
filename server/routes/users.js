@@ -88,7 +88,6 @@ router.post('/api/quizzmovie', function( req, res, next) {
 })
 
 router.post('/api/sendtraits', function( req, res, next) {
-  console.log('server', req.body.traits.quality)
   Quizz.findByIdAndUpdate(req.body._id, {
     traits : {
       quality: {
@@ -104,11 +103,11 @@ router.post('/api/sendtraits', function( req, res, next) {
   {
     upsert: true
   },
-  (err, traits) => {
+  (err, quizz) => {
     if (err) {
-      console.log('quizz')      
       next(err);
     } else {
+      console.log('quizz')            
       res.json({
         message: 'bravo patrick!'
       })
