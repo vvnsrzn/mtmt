@@ -6,8 +6,7 @@
         <i>Indice : ça sert à rien de mentir</i>
         <!-- -->
         <section>
-        <p class="content"><b>Selected:</b> {{ qualitySelected }}</p>
-        <b-field label="Ta principale qualité :">
+        <b-field label="Ta principale qualité ?">
             <b-autocomplete
                 rounded
                 v-model="name"
@@ -22,12 +21,13 @@
           <b-input rounded placeholder="Un indice peut être ?" v-model="qualityHint" type="text">
           </b-input>
         </b-field>
+                <p v-if="qualitySelected" >J'en étais sûr que tu étais {{ qualitySelected}}</p>
+        
       </section>
       <!-- -->
               <!-- -->
         <section>
-        <p class="content"><b>Selected:</b> {{ defectSelected }}</p>
-        <b-field label="Ta principale qualité :">
+        <b-field label="Ton principal défaut ?">
             <b-autocomplete
                 rounded
                 v-model="name2"
@@ -36,16 +36,20 @@
                 @select="optionDefect => defectSelected = optionDefect">
                 <template slot="empty">Je l'ai pas celui là..</template>
             </b-autocomplete>
+                            
 
         </b-field>
         <b-field>
           <b-input rounded placeholder="Un indice peut être ?" v-model="qualityHint" type="text">
           </b-input>
         </b-field>
+                <p v-if="defectSelected" >J'en étais sûr que tu étais {{ defectSelected}}</p>
+        
       </section>
       <!-- -->
-        
-    
+        <div>
+            <button class="button is-danger">Finaliser</button>
+        </div>
     </div>
   </div>
 </template>
