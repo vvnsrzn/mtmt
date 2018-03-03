@@ -67,11 +67,12 @@ import api from '../api';
       sendArtist(artist) {
         api
         .sendArtist({
-          _id: '5a9531b39f3afa648038ab5d',
+          _id: '5a990ebea0552c1dfd2a13e4',
           artist: artist,
           hint: this.hint
         })
         .then((data) => {
+          console.log(data)
           this.$router.push('/quizz-movie');
           })
           .catch(err => {

@@ -22,11 +22,33 @@ router.post('/profile', upload.single('photo'), function (req, res, next) {
 });
 
 router.post('/api/quizzmusic', function( req, res, next) {
-  console.log(req.query._id)
-  Quizz.findByIdAndUpdate(req.query._id, {
+  console.log(req.body)
+  Quizz.findByIdAndUpdate(req.body._id, {
     music: {
-      answer: req.query.artist,
-      hint: req.query.hint
+      answer: req.body.artist,
+      hint: req.body.hint
+    },
+  },
+  {
+    upsert: true
+  },
+  (err, quizz) => {
+    if (err) {
+      next(err);
+    } else {
+      // console.log(quizz)
+      res.json({
+        message: 'bravo patrick'
+      })
+    }
+  });
+})
+
+router.post('/api/quizzmovie', function( req, res, next) {
+  Quizz.findByIdAndUpdate(req.body._id, {
+    movie: {
+      answer: req.body.movie,
+      hint: req.body.hint
     },
   },
   {

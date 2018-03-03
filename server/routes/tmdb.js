@@ -14,4 +14,4 @@ app.get('/movie/:id', (req,res, next) => {
   });
 })
 
-module.exports = app;
+module.exports = app

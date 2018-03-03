@@ -82,4 +82,15 @@ export default {
   },
 
 
+  sendMovie(datas) {
+    console.log(datas)
+    return mtmt
+      .post(`/quizzmovie`, datas)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
+  },
+
 }

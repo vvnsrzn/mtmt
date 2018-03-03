@@ -28,7 +28,7 @@
             </figure>
             </a>
           </div>
-          <button class="button is-primary" @click.prevent="sendmovie(movie.title)">{{ movie.title }} </button>
+          <button class="button is-primary" @click.prevent="sendMovie(movie.title)">{{ movie.title }} </button>
         </div>
         </div>
       </div>
@@ -67,12 +67,12 @@ import api from '../api';
       sendMovie(movie) {
         api
         .sendMovie({
-          _id: '5a9531b39f3afa648038ab5d',
+          _id: '5a990ebea0552c1dfd2a13e4',
           movie: movie,
           hint: this.hint
         })
         .then((data) => {
-          console.log('tutu')
+          console.log(data)
           // this.$router.push('/quizz-movie');
           })
           .catch(err => {
