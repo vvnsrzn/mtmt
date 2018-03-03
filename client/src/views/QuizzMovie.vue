@@ -23,17 +23,16 @@
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <!-- <img v-if="movie.images[0]" v-bind:src=movie.images[0].url alt="Placeholder image"> -->
-              <!-- <img v-else src="https://placehold.it/600x600" alt="Placeholder image"> -->
+              <img v-if="movie.poster_path" v-bind:src="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" alt="Placeholder image">
+              <img v-else src="https://placehold.it/600x600" alt="Placeholder image">
             </figure>
-            <!-- <a v-bind:href=movie.external_urls.spotify> -->
-            <!-- <button class="button">Écouter</button> -->
             </a>
           </div>
-          <button class="button is-primary" @click.prevent="sendmovie(movie.name)">{{ movie.name }} </button>
+          <button class="button is-primary" @click.prevent="sendmovie(movie.title)">{{ movie.title }} </button>
         </div>
         </div>
       </div>
+      <pre>{{movies}}</pre>
       </div>  
     </div>  
 </div>    
@@ -57,7 +56,8 @@ import api from '../api';
         api
         .getMovie(this.search)
         .then((movies) => {
-          this.movies = movies.body.movies.items
+          this.movies = movies.results,
+          console.log(this.movies)
         })
         .catch(err => {
           this.error = err;
@@ -66,13 +66,14 @@ import api from '../api';
 
       sendMovie(movie) {
         api
-        .sendMrtist({
+        .sendMovie({
           _id: '5a9531b39f3afa648038ab5d',
-          artist: artist,
+          movie: movie,
           hint: this.hint
         })
         .then((data) => {
-          this.$router.push('/quizz-movie');
+          console.log('tutu')
+          // this.$router.push('/quizz-movie');
           })
           .catch(err => {
           this.error = err;

@@ -8,6 +8,10 @@ const spotify = axios.create({
   baseURL: process.env.API_SPOTIFY_URL || 'http://localhost:3000/spotify',
 });
 
+const tmdb = axios.create({ 
+  baseURL: 'http://localhost:3000/tmdb',
+})
+
 const errHandler = err => {
   console.error(err.response.data);
   throw err.response.data;
@@ -65,7 +69,17 @@ export default {
         console.error(err);
         throw err
       })
-  }
+  },
+
+  getMovie(query) {
+    return tmdb
+      .get(`/movie/${query}`)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
+  },
 
 
 }

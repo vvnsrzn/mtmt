@@ -87,11 +87,13 @@ passport.use(
 const index = require('./routes/index');
 const authRoutes = require('./routes/auth');
 const spotify = require('./routes/spotify');
+const tmdb = require('./routes/tmdb');
 const users = require('./routes/users');
 
 app.use('/', index);
 app.use('/api', authRoutes);
 app.use('/spotify', spotify);
+app.use('/tmdb', tmdb);
 app.use('/', users)
 
 // This is an example of protected route
