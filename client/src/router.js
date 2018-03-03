@@ -8,6 +8,7 @@ import LookingForRange from './views/Lookingfor.vue'
 import QuizzInfo from './views/QuizzInfo.vue'
 import QuizzMusic from './views/QuizzMusic.vue'
 import QuizzMovie from './views/QuizzMovie.vue'
+import QuizzTraits from './views/QuizzTraits.vue'
 
 
 Vue.use(Router)
@@ -48,6 +49,10 @@ export default new Router({
     {
       path: '/quizz-movie',
       component: QuizzMovie
+    },
+    {
+      path: '/quizz-traits',
+      component: QuizzTraits
     },
   ]
 })

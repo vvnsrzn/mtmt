@@ -11,6 +11,7 @@
     "buefy": "^0.6.3",
     "element-theme-chalk": "^2.2.0",
     "element-ui": "^2.2.0",
+    "lodash": "^4.17.5",
     "spotify-web-api-js": "^0.23.0",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1"

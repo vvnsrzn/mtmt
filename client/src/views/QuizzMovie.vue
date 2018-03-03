@@ -72,7 +72,7 @@ import api from '../api';
         })
         .then((data) => {
           console.log(data)
-          this.$router.push('/quizz-character-traits');
+          this.$router.push('/quizz-traits');
           })
           .catch(err => {
           this.error = err;
