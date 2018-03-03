@@ -21,16 +21,6 @@ export default {
       .catch(errHandler);
   },
 
-  // getProfile(_id) {
-  //   return mtmt
-  //     .get(`/profile/${_id}`)
-  //     .then(res => res.data)
-  //     .catch(err => {
-  //       console.error(err);
-  //       throw err
-  //     })
-  // },
-
   uploadPicture(obj) {
     const formData = new FormData();
     Object.keys(obj).forEach(key => formData.append(key, obj[key]));

@@ -15,61 +15,49 @@ const quizzSchema = new Schema({
   usersAnswered: {
     type: Array,
   },
-  musicQuestion: {
-    type: Array,
-    required: true
+  music: {
+    answer: {
+      type: String,
+    },
+    hint: {
+      type: String,
+    },
+    badResponses: {
+      type: Array
+    }
   },
-  musicAnswer: {
-    type: String,
-    required: true,
+  venue: {
+    answer: {
+      type: String,
+    },
+    hint: {
+      type: String,
+    },
+    badResponses: {
+      type: Array
+    }
   },
-  musicHint: {
-    type: String,
+  movie: {
+    answer: {
+      type: String,
+    },
+    hint: {
+      type: String,
+    },
+    badResponses: {
+      type: Array
+    }
   },
-  musicBadResponses: {
-    type: Array,
-  },
-  movieQuestion: {
-    type: Array,
-    required: true
-  },
-  movieAnswer: {
-    type: String,
-    required: true,
-  },
-  movieHint: {
-    type: String,
-  },
-  movieBadResponses: {
-    type: Array,
-  },
-  tripQuestion: {
-    type: Array,
-    required: true
-  },
-  tripAnswer: {
-    type: String,
-    required: true,
-  },
-  tripHint: {
-    type: String,
-  },
-  tripBadResponses: {
-    type: Array,
-  },
-  bookQuestion: {
-    type: Array,
-    required: true
-  },
-  bookAnswer: {
-    type: String,
-    required: true,
-  },
-  bookHint: {
-    type: String,
-  },
-  bookBadResponses: {
-    type: Array,
+  book: {
+    answer: {
+      type: String,
+    },
+    hint: {
+      type: String,
+    },
+    badResponses: {
+      type: Array
+    }
   },
 });
 

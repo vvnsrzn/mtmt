@@ -4,11 +4,13 @@
         <img src="https://lh3.googleusercontent.com/D_04_AQH-II9TyLU26GDtFxPZohYWbl-SGKb1msbi5XlIGMAEr0HI01RvZ7Afi5BzQ=w300">
         <h2>Quel est ton groupe préféré ?</h2>
         <form>
+          <div class="box has-text-centered">
             <b-field>
                 <b-input placeholder="Search..." v-model="search" type="search" icon="magnify">
                 </b-input>
-                <button class="button" @click.prevent="getMusic">Submit</button>
+                <button class="button hidden" @click.prevent="getMusic">Submit</button>
             </b-field>
+            </div>
         </form>
     </div>
     <div class="container">
@@ -32,6 +34,7 @@
     </div>  
 </div>    
 </template>
+
 
 <script>
 import api from '../api';
@@ -78,5 +81,8 @@ import api from '../api';
 <style scoped>
   img {
     width: 50px
+  },
+  box {
+    margin: 0 auto
   }
 </style>

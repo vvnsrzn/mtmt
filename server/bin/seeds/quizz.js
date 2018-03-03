@@ -6,22 +6,26 @@ let quizzDatas = [{
   _id: '5a9531b39f3afa648038ab5d',
   treshold: 75,
   usersAnswered: [],
-  musicQuestion: "Quel est ton groupe préféré ?",
-  musicAnswer: 'LED ZEP',
-  musicHint: '',
-  musicBadResponses: ['NTM', 'IAM', 'DIRE STRAITS'],
-  movieQuestion: "Quel est ton film préféré ?",
-  movieAnswer: "Forrest Gump",
-  movieHint: "Timmy!",
-  movieBadResponses: ['MATRIX', 'LE PERE NOEL', 'LE ROI LION'],
-  tripQuestion: "Ta ville de coeur ?",
-  tripAnswer: "Toulouse",
-  tripHint: "Ô",
-  tripBadResponses: ['PERPI', "NEVERS", "LONDRES"],
-  bookQuestion: "Ton livre préféré ?",
-  bookAnswer: "Le mythe de Syssiphe",
-  bookHint: "Pierre qui roule",
-  bookBadResponses: ["Oui oui", "Kafka", "Patrick"]
+  music: {
+    answer: 'LED ZEP',
+    hint: '',
+    badResponses: ['NTM', 'IAM', 'DIRE STRAITS']
+  },
+  venue: {
+    answer: 'LED ZEP',
+    hint: '',
+    badResponses: ['NTM', 'IAM', 'DIRE STRAITS']
+  },
+  movie: {
+    answer: 'LED ZEP',
+    hint: '',
+    badResponses: ['NTM', 'IAM', 'DIRE STRAITS']
+  },
+  book: {
+    answer: 'LED ZEP',
+    hint: '',
+    badResponses: ['NTM', 'IAM', 'DIRE STRAITS']
+  },
 }];
 
 Quizz.create(quizzDatas, (err, quizz) => {
