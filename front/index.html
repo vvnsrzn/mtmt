@@ -57,7 +57,7 @@
             </figure>
           </div>
           <div class="column is-6 is-offset-1">
-            <h1 class="title is-2">
+            <h1 class="title is-1">
               MTMT
             </h1>
             <h2 class="subtitle is-4">
@@ -77,7 +77,7 @@
 
     <div class="hero-body container columns">
       <div class="column content-left">
-        <h2>Lorem ipsum</h2>
+        <h2 class="title is-2">Lorem Ipsum</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum perferendis nam dolores dicta quia quis nulla excepturi
           repellat magni soluta suscipit est ad deserunt ex eos officiis nisi, alias ullam.</p>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure quos recusandae sequi incidunt laboriosam aperiam,
@@ -85,7 +85,6 @@
           ad neque.</p>
       </div>
       <div class="column">
-
         <div class="card swiper p1">
           <header class="card-header">
             <p class="card-header-title">
@@ -104,7 +103,8 @@
             <div class="content">
               <p>29 ans</p>
               <p>Ironhack</p>
-              <p>Pourquoi on dit FBI à l'anglaise et CIA à la française ? Si tu as la réponse, clique sur le coeur. Si tu l'as pas, mais que tu veux m'aider à trouver la réponse clique aussi.</p>
+              <p>Pourquoi on dit FBI à l'anglaise et CIA à la française ? Si tu as la réponse, clique sur le coeur. Si tu l'as
+                pas, mais que tu veux m'aider à trouver la réponse clique aussi.</p>
             </div>
           </div>
           <footer class="card-footer">
@@ -119,27 +119,71 @@
       </div>
     </div>
 
-    <div class="container">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, debitis cupiditate magnam sed suscipit sit optio expedita. Placeat, quis magnam eius minima eligendi libero obcaecati quo, a ut error odit!
+    <div class="hero-body columns has-text-centered vp">
+      <div class="column has-text-centered vp1">
+        <i class="material-icons">format_align_left</i>
+        <h3 class="title is-3">Quizz</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit fuga tenetur exercitationem repudiandae quaerat sequi
+          error culpa veniam quisquam provident voluptatum, animi facere, quibusdam minima tempore. Porro, totam! Consequuntur,
+          voluptatum.
+        </p>
+      </div>
+      <div class="column has-text-centered vp2">
+        <i class="material-icons">search</i>
+        <h3 class="title is-3">Swipe</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit fuga tenetur exercitationem repudiandae quaerat sequi
+          error culpa veniam quisquam provident voluptatum, animi facere, quibusdam minima tempore. Porro, totam! Consequuntur,
+          voluptatum.
+        </p>
+      </div>
+      <div class="column has-text-centered vp3">
+        <i class="material-icons">check</i>
+        <h3 class="title is-3">Discute</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit fuga tenetur exercitationem repudiandae quaerat sequi
+          error culpa veniam quisquam provident voluptatum, animi facere, quibusdam minima tempore. Porro, totam! Consequuntur,
+          voluptatum.
+        </p>
+      </div>
     </div>
+
+    <div class="container">
+    </div>
+
 
   </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="paroller.js"></script>
   <script async type="text/javascript" src="../js/bulma.js"></script>
   <script>
-    // initialize paroller.js and set attributes for selected elements
+
     $(".p1, [data-paroller-factor]").paroller({
       factor: 1,            // multiplier for scrolling speed and offset
       type: 'foreground',     // background, foreground
       direction: 'horizontal' // vertical, horizontal
     });
 
-    // initialize paroller.js and set attributes for selected elements
     $(".p2, [data-paroller-factor]").paroller({
-      factor: 0.3,            // multiplier for scrolling speed and offset
+      factor: -0.9,            // multiplier for scrolling speed and offset
       type: 'foreground',     // background, foreground
-      direction: 'vertical'   // vertical, horizontal
+      direction: 'horizontal'   // vertical, horizontal
+    });
+
+    $(".vp1, [data-paroller-factor]").paroller({
+      factor: -0.4,            // multiplier for scrolling speed and offset
+      type: 'foreground',     // background, foreground
+      direction: 'vertical'   // vertical, vertical
+    });
+
+    $(".vp2, [data-paroller-factor]").paroller({
+      factor: 0.0,            // multiplier for scrolling speed and offset
+      type: 'foreground',     // background, foreground
+      direction: 'vertical'   // vertical, vertical
+    });
+
+    $(".vp3, [data-paroller-factor]").paroller({
+      factor: 0.8,            // multiplier for scrolling speed and offset
+      type: 'foreground',     // background, foreground
+      direction: 'vertical'   // vertical, vertical
     });
   </script>
 </body>
