@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTMT - Make Things Magic Together</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="hero is-fullheight is-default is-bold">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="../">
+              <img src="../images/bulma.png" alt="Logo">
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item is-active">
+                Home
+              </a>
+              <a class="navbar-item">
+                Examples
+              </a>
+              <a class="navbar-item">
+                Features
+              </a>
+              <a class="navbar-item">
+                Team
+              </a>
+              <a class="navbar-item">
+                Help
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+          <div class="column is-5 p2">
+            <figure class="image is-4by3">
+              <img src="images/couple.jpeg" alt="Description">
+            </figure>
+          </div>
+          <div class="column is-6 is-offset-1">
+            <h1 class="title is-2">
+              MTMT
+            </h1>
+            <h2 class="subtitle is-4">
+              Make Things Magic Together
+            </h2>
+            <br>
+            <p class="has-text-centered">
+              <button class="loginBtn loginBtn--facebook">
+                Continuer avec Facebook
+              </button>
+              <p class="small">L'application ne publiera rien, jamais, promis juré.</p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-body container columns">
+      <div class="column content-left">
+        <h2>Lorem ipsum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum perferendis nam dolores dicta quia quis nulla excepturi
+          repellat magni soluta suscipit est ad deserunt ex eos officiis nisi, alias ullam.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure quos recusandae sequi incidunt laboriosam aperiam,
+          vitae excepturi voluptatem dolorum similique saepe sapiente necessitatibus voluptatum eligendi optio sunt consectetur
+          ad neque.</p>
+      </div>
+      <div class="column">
+
+        <div class="card swiper p1">
+          <header class="card-header">
+            <p class="card-header-title">
+              Vivian
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </a>
+          </header>
+          <div class="img">
+            <img src="images/vivian.jpg">
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <p>29 ans</p>
+              <p>Ironhack</p>
+              <p>Pourquoi on dit FBI à l'anglaise et CIA à la française ? Si tu as la réponse, clique sur le coeur. Si tu l'as pas, mais que tu veux m'aider à trouver la réponse clique aussi.</p>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">
+              <i class="material-icons">cancel</i>
+            </a>
+            <a href="#" class="card-footer-item">
+              <i class="material-icons heart">favorite</i>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, debitis cupiditate magnam sed suscipit sit optio expedita. Placeat, quis magnam eius minima eligendi libero obcaecati quo, a ut error odit!
+    </div>
+
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="paroller.js"></script>
+  <script async type="text/javascript" src="../js/bulma.js"></script>
+  <script>
+    // initialize paroller.js and set attributes for selected elements
+    $(".p1, [data-paroller-factor]").paroller({
+      factor: 1,            // multiplier for scrolling speed and offset
+      type: 'foreground',     // background, foreground
+      direction: 'horizontal' // vertical, horizontal
+    });
+
+    // initialize paroller.js and set attributes for selected elements
+    $(".p2, [data-paroller-factor]").paroller({
+      factor: 0.3,            // multiplier for scrolling speed and offset
+      type: 'foreground',     // background, foreground
+      direction: 'vertical'   // vertical, horizontal
+    });
+  </script>
+</body>
+
+</html>
