@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 
 .vp {
-  margin: 10vw
+  margin: 5vw
+}
+
+p {
+  font-size: 24px
 }
 
 body {
