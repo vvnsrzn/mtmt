@@ -5,13 +5,43 @@
 <p>Blabla blaBlabla blaBlabla blaBlabla blaBlabla blaBlabla bla</p>
 <p>Blabla blaBlabla blaBlabla blaBlabla blaBlabla blaBlabla bla</p>
 <p>Blabla blaBlabla blaBlabla blaBlabla blaBlabla blaBlabla bla</p>
-<router-link to="/quizz-music"><button class="button">Click</button></router-link>
+        <div class="block container">
+          {{ treshold }}
+          <el-slider v-model="treshold"
+            :value="50"
+            :min="0"
+            :max="100">
+          </el-slider>
+        </div>
+<router-link to="/quizz-music"><button class="button" @click.prevent="sendTreshold" >Click</button></router-link>
 </div>
 </template>
 
 <script>
-  export default {
+import api from '../api';
 
+  export default {
+    data () {
+      return {
+        treshold: 50
+      }
+    },
+    methods: {
+      sendTreshold() {
+        console.log('toto')
+        api
+        .sendTreshold({
+          userId: localStorage.getItem('id'),                
+          treshold: this.treshold
+        })
+        .then((treshold) => {
+          this.$router.push('/quizz-music');          
+        })
+        .catch(err => {
+          this.error = err
+        })
+      }
+    }
 }
 </script>
 

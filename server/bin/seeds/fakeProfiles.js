@@ -4,10 +4,9 @@ const User = require('../../models/user.js');
 
 var faker = require('faker');
 faker.locale = "fr";
-var fs = require('fs');
 
 var file = [];
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 2000; i++) {
   
   let fakeDatas = {
     facebookId: faker.random.number(),
@@ -22,18 +21,8 @@ for (let i = 0; i < 10000; i++) {
     phone: faker.phone.phoneNumber(),
     photos: faker.image.avatar(),
   }
-
   file.push(fakeDatas)
 }
-
-// fs.writeFile('fakesProfiles1000.json', file, 'utf8', function (err, datas) {
-//   if (err) {
-//     throw err
-//   }
-//   else {
-//     console.log('File saved!')
-//   }
-// })
 
 User.create(file, (err, user) => {
   if (err) {

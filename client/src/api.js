@@ -86,7 +86,6 @@ export default {
       })
   },
 
-
   sendMovie(datas) {
     return mtmt
       .post(`/quizzmovie`, datas)
@@ -98,9 +97,18 @@ export default {
   },
 
   sendTraits(datas) {
-    console.log(datas)    
     return mtmt
       .post(`/sendtraits`, datas)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
+  },
+
+  sendTreshold(datas) {
+    return mtmt
+      .post(`sendtreshold`, datas)
       .then(res => res.data)
       .catch(err => {
         console.error(err);

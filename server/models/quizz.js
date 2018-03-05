@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const quizzSchema = new Schema({
 
-  // id vs userId
+  // id vs userId?
 
   _id: {
     
@@ -13,6 +13,9 @@ const quizzSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
+
+  // user
+
   treshold: {
     type: Number,
     min: 0,
