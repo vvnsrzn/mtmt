@@ -91,7 +91,7 @@ import api from '../api';
     setLookingFor () {
         api
           .setLookingFor({
-            id: '5a9cee10ca528a3995307177',
+            id: localStorage.getItem('id'),
             gender: this.gender,
             range: this.lookingForAge,
             age: this.age,

@@ -26,7 +26,6 @@ export default {
   },
 
   uploadPicture(obj) {
-    // console.log(obj._id)
     const formData = new FormData();
     Object.keys(obj).forEach(key => formData.append(key, obj[key]));
     return mtmt
@@ -35,10 +34,9 @@ export default {
           'Content-Type': 'multipart/form-data',
         }
       })
-      // .then(res => res.data)
       .then( res => {
         const { data } = res;
-        localStorage.setItem('id', JSON.stringify((obj._id)));
+        localStorage.setItem('id', obj._id);
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.token;
         return data;
       })
