@@ -290,7 +290,7 @@ import api from '../api';
                 })
                 .then((data) => {
                     console.log(data)
-                    this.$router.push('/quizz-movie');
+                    this.$router.push('/swiper');
                     })
                     .catch(err => {
                     this.error = err;

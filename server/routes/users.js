@@ -107,10 +107,8 @@ router.post('/api/sendtraits', function( req, res, next) {
   },
   (err, quizz) => {
     if (err) {
-      console.log('tutu')
       next(err);
     } else {
-      console.log('toto')
       res.json({
         message: 'bravo patrick!'
       })

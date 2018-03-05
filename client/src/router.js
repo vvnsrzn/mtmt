@@ -9,6 +9,7 @@ import QuizzInfo from './views/QuizzInfo.vue'
 import QuizzMusic from './views/QuizzMusic.vue'
 import QuizzMovie from './views/QuizzMovie.vue'
 import QuizzTraits from './views/QuizzTraits.vue'
+import Swiper from './views/Swiper.vue'
 
 
 Vue.use(Router)
@@ -53,6 +54,10 @@ export default new Router({
     {
       path: '/quizz-traits',
       component: QuizzTraits
+    },
+    {
+      path: '/swiper',
+      component: Swiper
     },
   ]
 })
