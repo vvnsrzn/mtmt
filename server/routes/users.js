@@ -118,20 +118,15 @@ router.post('/api/sendtraits', function( req, res, next) {
 })
 
 router.post('/api/sendtreshold', function (req, res, next) {
-  console.log(req.body.userId)
-  Quizz.findByIdAndUpdate(req.body.userId, {
-    treshold: req.body.treshold
-  },
-  {
-    upsert: true
-  },
+  Quizz.create({
+    userId: req.body.userId,
+    treshold: req.body.treshold},
   (err, quizz) => {
     if (err) {
       next(err);
     } else {
-      res.json({
-        message: 'bravo patrick'
-      })
+      res.json(quizz)
+      // user findbyandupdate
     }
   }
   )

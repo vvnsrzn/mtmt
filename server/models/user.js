@@ -1,10 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Quizz = require('./quizz');
 
 const userSchema = new Schema({
   facebookId: {
     type: String,
     // required: true
+  },
+  quizzId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Quizz',
   },
   status: {
     type: String,

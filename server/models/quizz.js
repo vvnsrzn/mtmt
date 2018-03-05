@@ -3,19 +3,10 @@ const User = require('./user');
 const Schema = mongoose.Schema;
 
 const quizzSchema = new Schema({
-
-  // id vs userId?
-
-  _id: {
-    
-  },
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
-
-  // user
-
   treshold: {
     type: Number,
     min: 0,
