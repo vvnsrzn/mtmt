@@ -17,6 +17,16 @@ const userSchema = new Schema({
     default: 'pending',
     enum: ['pending', 'granted', 'killed']
   },
+  swiped: [{
+    liked: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    ignored: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  }],
   gender: {
     type: String,
     // required: true,
