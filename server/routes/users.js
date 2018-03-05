@@ -34,7 +34,8 @@ router.post('/api/lookingfor', function (req, res, next) {
       gender: req.body.gender,
       lookingForRange: req.body.range,
       lookingForGender: req.body.lookingForGender,
-      age: req.body.age
+      age: req.body.age,
+      bio: req.body.bio
     }, err => {
       if (err) return next(err);
       res.json({

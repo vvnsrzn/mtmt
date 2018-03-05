@@ -55,6 +55,17 @@
           :max="50">
         </el-slider>
       </div>
+      <div class="block container">
+        <h3>Si tu devais te décrire en un tweet :</h3>
+          <b-field>
+            <b-input maxlength="280" 
+              v-model="bio"
+              type="textarea"
+              placeholder="Positive attitude"
+              ></b-input>
+          </b-field>
+      </div>
+
     <button class="button is-primary">Next</button>      
       </section>
     </form>
@@ -72,6 +83,7 @@ import api from '../api';
         lookingForGender: 'male',
         range: [26, 38],
         age: 24,
+        bio: '',
         id: '' // How to get the user id?        
       }
     },
@@ -83,7 +95,8 @@ import api from '../api';
             gender: this.gender,
             range: this.lookingForAge,
             age: this.age,
-            lookingForGender: this.lookingForGender
+            lookingForGender: this.lookingForGender,
+            bio: this.bio
           })
           .then((data) => {
           this.$router.push('/quizz-info');
