@@ -19,6 +19,15 @@
             </b-radio-button>
 
         </b-field>
+          <h3>J'ai {{ age }} ans</h3>
+
+        <div class="block container">
+          <el-slider v-model="age"
+            :min="18"
+            :max="50">
+          </el-slider>
+        </div>
+
           <h3>Je recherche un.e</h3>
         <b-field>
             <b-radio-button 
@@ -62,6 +71,7 @@ import api from '../api';
         lookingForAge: [26, 38],
         lookingForGender: 'male',
         range: [26, 38],
+        age: 24,
         id: '' // How to get the user id?        
       }
     },
@@ -69,9 +79,10 @@ import api from '../api';
     setLookingFor () {
         api
           .setLookingFor({
-            id: '5a9aab1bad473d25a962900f',
+            id: '5a9cee10ca528a3995307177',
             gender: this.gender,
             range: this.lookingForAge,
+            age: this.age,
             lookingForGender: this.lookingForGender
           })
           .then((data) => {
