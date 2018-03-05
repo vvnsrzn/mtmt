@@ -28,7 +28,6 @@ import api from '../api';
     },
     methods: {
       sendTreshold() {
-        console.log('toto')
         api
         .sendTreshold({
           userId: localStorage.getItem('id'),                

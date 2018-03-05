@@ -125,8 +125,16 @@ router.post('/api/sendtreshold', function (req, res, next) {
     if (err) {
       next(err);
     } else {
-      res.json(quizz)
-      // user findbyandupdate
+      User.findByIdAndUpdate(quizz.userId,{
+        quizzId: quizz._id
+      }, (err, user) => {
+        if (err) {
+          console.log('tutu');
+          next(err);
+        } else {
+          res.json(user)
+        }
+      })
     }
   }
   )
