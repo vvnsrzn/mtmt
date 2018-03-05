@@ -21,7 +21,6 @@
           <b-input rounded placeholder="Un indice peut être ?" v-model="qualityHint" type="text">
           </b-input>
         </b-field>
-                <p v-if="qualitySelected" >J'en étais sûr que tu étais {{ qualitySelected }}</p>
         
       </section>
       <!-- -->
@@ -43,7 +42,6 @@
           <b-input rounded placeholder="Un indice peut être ?" v-model="defectHint" type="text">
           </b-input>
         </b-field>
-                <p v-if="defectSelected" >J'en étais sûr que tu étais {{ defectSelected}}</p>
         
       </section>
       <!-- -->
@@ -267,11 +265,6 @@ import api from '../api';
                         'Volontaire',
                         'Vrai(e)'],
                 
-                
-                
-                
-                
-                
                 qualityHint: '',
                 qualitySelected: null,
                 defect:  ['Sale', 'Méchant',],
@@ -283,7 +276,7 @@ import api from '../api';
             sendTraits() {
                 api
                 .sendTraits({
-                    _id: '5a990ebea0552c1dfd2a13e4',
+                    _id: '5a9531b39f3afa648038ab5e',
                     traits: {
                         quality: {
                             answer: this.name,
@@ -296,7 +289,7 @@ import api from '../api';
                     }
                 })
                 .then((data) => {
-                    // console.log(data)
+                    console.log(data)
                     this.$router.push('/quizz-movie');
                     })
                     .catch(err => {

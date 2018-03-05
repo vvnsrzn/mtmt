@@ -83,7 +83,6 @@ export default {
 
 
   sendMovie(datas) {
-    console.log(datas)
     return mtmt
       .post(`/quizzmovie`, datas)
       .then(res => res.data)
@@ -94,6 +93,7 @@ export default {
   },
 
   sendTraits(datas) {
+    console.log(datas)    
     return mtmt
       .post(`/sendtraits`, datas)
       .then(res => res.data)

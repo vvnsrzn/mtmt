@@ -4,8 +4,9 @@ const Schema = mongoose.Schema;
 
 const quizzSchema = new Schema({
   _id: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+    // type: Schema.Types.ObjectId,
+    // ref: 'User',
+    type: String
   },
   treshold: {
     type: Number,
@@ -26,17 +27,6 @@ const quizzSchema = new Schema({
       type: Array
     }
   },
-  // venue: {
-  //   answer: {
-  //     type: String,
-  //   },
-  //   hint: {
-  //     type: String,
-  //   },
-  //   badResponses: {
-  //     type: Array
-  //   }
-  // },
   movie: {
     answer: {
       type: String,
@@ -48,17 +38,6 @@ const quizzSchema = new Schema({
       type: Array
     }
   },
-  // book: {
-  //   answer: {
-  //     type: String,
-  //   },
-  //   hint: {
-  //     type: String,
-  //   },
-  //   badResponses: {
-  //     type: Array
-  //   }
-  // },
   traits: {
     quality: {
       answer: {

@@ -3,7 +3,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mtmt");
 const Quizz = require('../../models/quizz.js');
 
 let quizzDatas = [{
-  _id: '5a9531b39f3afa648038ab5d',
+  _id: '5a9531b39f3afa648038ab5e',
   treshold: 75,
   usersAnswered: [],
   music: {
@@ -30,6 +30,7 @@ let quizzDatas = [{
 
 Quizz.create(quizzDatas, (err, quizz) => {
   if (err) {
+    console.error(err);
     throw err;
   }
   else {
