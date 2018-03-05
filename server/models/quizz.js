@@ -61,7 +61,9 @@ const quizzSchema = new Schema({
         type: Array
         }
       },
-    },
+    }, 
+}, { 
+  timestamps: true
 });
 
 const Quizz = mongoose.model('Quizz', quizzSchema);
