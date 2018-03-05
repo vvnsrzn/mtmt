@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mtmt");
 const User = require('../../models/user.js');
 
+
 let userDatas = [{
   facebookId: '123456789',
   status: 'pending',

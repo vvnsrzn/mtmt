@@ -45,8 +45,10 @@ router.post('/api/lookingfor', function (req, res, next) {
   }
 )
 
+// Quizz Routes
+
 router.post('/api/quizzmusic', function( req, res, next) {
-  Quizz.findByIdAndUpdate(req.body._id, {
+  Quizz.findByIdAndUpdate(req.body.userId, {
     music: {
       answer: req.body.artist,
       hint: req.body.hint
@@ -59,7 +61,6 @@ router.post('/api/quizzmusic', function( req, res, next) {
     if (err) {
       next(err);
     } else {
-      // console.log(quizz)
       res.json({
         message: 'bravo patrick'
       })
@@ -68,7 +69,7 @@ router.post('/api/quizzmusic', function( req, res, next) {
 })
 
 router.post('/api/quizzmovie', function( req, res, next) {
-  Quizz.findByIdAndUpdate(req.body._id, {
+  Quizz.findByIdAndUpdate(req.body.userId, {
     movie: {
       answer: req.body.movie,
       hint: req.body.hint
@@ -89,7 +90,7 @@ router.post('/api/quizzmovie', function( req, res, next) {
 })
 
 router.post('/api/sendtraits', function( req, res, next) {
-  Quizz.findByIdAndUpdate(req.body._id, {$set : {
+  Quizz.findByIdAndUpdate(req.body.userId, {$set : {
       traits : {
         quality: {
           answer: req.body.traits.quality.answer,

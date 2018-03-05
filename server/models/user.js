@@ -57,7 +57,7 @@ const userSchema = new Schema({
   phone: {
     type: String,
     minlength: 10,
-    maxlength: 12
+    maxlength: 14
   },
   photos: [
     String,

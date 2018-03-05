@@ -66,7 +66,7 @@ import api from '../api';
       sendMovie(movie) {
         api
         .sendMovie({
-          _id: localStorage.getItem('id'),
+          userId: localStorage.getItem('id'),
           movie: movie,
           hint: this.hint
         })
