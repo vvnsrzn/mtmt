@@ -276,7 +276,7 @@ import api from '../api';
             sendTraits() {
                 api
                 .sendTraits({
-                    _id: '5a9531b39f3afa648038ab5e',
+                    _id: localStorage.getItem('id'),
                     traits: {
                         quality: {
                             answer: this.name,

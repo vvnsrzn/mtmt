@@ -67,7 +67,7 @@ import api from '../api';
       sendArtist(artist) {
         api
         .sendArtist({
-          _id: '5a990ebea0552c1dfd2a13e4',
+          _id: localStorage.getItem('id'),
           artist: artist,
           hint: this.hint
         })
