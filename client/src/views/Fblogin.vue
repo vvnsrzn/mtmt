@@ -43,7 +43,7 @@ export default {
         photos: this.files[0],
       })
       .then((data) => {
-          this.$router.push('/lookingfor');
+          this.$router.push(`/lookingfor/`);
         })
       .catch(err => {
           this.error = err;
