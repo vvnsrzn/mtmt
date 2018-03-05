@@ -46,7 +46,6 @@ router.post('/api/lookingfor', function (req, res, next) {
 )
 
 router.post('/api/quizzmusic', function( req, res, next) {
-  console.log(req.body)
   Quizz.findByIdAndUpdate(req.body._id, {
     music: {
       answer: req.body.artist,
@@ -90,31 +89,33 @@ router.post('/api/quizzmovie', function( req, res, next) {
 })
 
 router.post('/api/sendtraits', function( req, res, next) {
-  console.log(req.body)
-  Quizz.findByIdAndUpdate(req.body._id, {  
-    traits : {
-      quality: {
-        answer: req.body.traits.quality.answer,
-        hint: req.body.traits.quality.hint   
-      },
-      defect: {
-        answer: req.body.traits.defect.answer,
-        hint: req.body.traits.defect.hint
-      },
+  Quizz.findByIdAndUpdate(req.body._id, {$set : {
+      traits : {
+        quality: {
+          answer: req.body.traits.quality.answer,
+          hint: req.body.traits.quality.hint   
+        },
+        defect: {
+          answer: req.body.traits.defect.answer,
+          hint: req.body.traits.defect.hint
+        },
+      }  
     },
-  }),
+  },
   {
     upsert: true
   },
   (err, quizz) => {
     if (err) {
+      console.log('tutu')
       next(err);
     } else {
+      console.log('toto')
       res.json({
         message: 'bravo patrick!'
       })
     }
-  };
+  });
 })
 
 
