@@ -74,12 +74,12 @@ export default {
     },
 
     hideQuizz: function () {
-      console.log('tutu')
       this.isQuizzActive = false
     },
 
     dislike: function () {
-      }
+      console.log('tutu')      
+    },
   }
 }
 </script>
