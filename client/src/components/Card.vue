@@ -12,8 +12,8 @@
           </span>
         </a>
       </header>
-      <div class="img">
-        <img :src="photo" />
+      <div class="img image is-180x180">
+        <img :src="photo" class=""/>
       </div>
       <div class="card-content">
         <div class="content">

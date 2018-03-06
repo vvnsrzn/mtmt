@@ -50,7 +50,10 @@ export default {
           this.error = err;
         })
     }
-  }
+  },
+  beforeMount() {
+    this.getProfile()
+  },
 }
 </script>
 <style>
