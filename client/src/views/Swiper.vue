@@ -11,6 +11,9 @@
       work="Ironhack"
       bio="Pourquoi on dit FBI à l'anglaise et CIA à la française ? Si tu as la réponse, clique sur le coeur. Si tu l'as pas, mais que tu veux m'aider à trouver la réponse clique aussi."
       />
+    <Quizz
+      msg="Lorem Ipsum"
+     />
   </div>  
   
 </div>
@@ -19,12 +22,14 @@
 <script>
 // @ is an alias to /src
 import Card from '@/components/Card.vue'
+// import Quizz from '@/components/Quizz.vue'
 
 export default {
   name: 'Swiper',
   components: {
-    Card
-  }
+    Card,
+    // Quizz
+  },
 }
 </script>
 <style>
