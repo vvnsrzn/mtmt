@@ -8,7 +8,7 @@
             <b-field>
                 <b-input placeholder="Search..." v-model="search" type="search" icon="magnify">
                 </b-input>
-                <button class="button hidden" @click.prevent="getMovie">Submit</button>
+                <button v-show="movies" class="button hidden" @click.prevent="getMovie">Submit</button>
             </b-field>
             <b-field>
                 <b-input placeholder="Un indice peut être ?" v-model="hint" type="text">
