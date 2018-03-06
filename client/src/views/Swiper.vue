@@ -20,7 +20,6 @@
 // @ is an alias to /src
 import Card from '@/components/Card.vue'
 import api from '../api'
-// import Quizz from '@/components/Quizz.vue'
 
 export default {
   name: 'Swiper',
@@ -38,7 +37,6 @@ export default {
       api
         .getProfile('5a9e67c1104249234b50f319')
         .then((user) => {
-          console.log(user)
           this.user = user
         })
         .catch(err => {
