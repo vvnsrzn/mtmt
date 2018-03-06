@@ -11,11 +11,7 @@
       work="Ironhack"
       bio="Pourquoi on dit FBI à l'anglaise et CIA à la française ? Si tu as la réponse, clique sur le coeur. Si tu l'as pas, mais que tu veux m'aider à trouver la réponse clique aussi."
       />
-    <Quizz
-      msg="Lorem Ipsum"
-     />
-  </div>  
-  
+  </div>
 </div>
 </template>
 
@@ -29,7 +25,6 @@ export default {
   props: ['firstName', 'photo', 'age', 'work', 'bio', 'msg'],
   components: {
     Card,
-    // Quizz
   },
 }
 </script>

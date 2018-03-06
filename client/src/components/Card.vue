@@ -40,7 +40,7 @@
     </div>
   </div>
     <div class= "column" v-if="isQuizzActive">
-    <Quizz />
+    <Quizz @hide="hideQuizz" />
   </div>
 </div>
 </template>
@@ -66,11 +66,16 @@ export default {
     age: String,
     work: String,
     bio: String,
+    // isQuizzActive: Boolean
   },
   methods: {
     like: function () {
-      console.log('toto')
       this.isQuizzActive = true
+    },
+
+    hideQuizz: function () {
+      console.log('tutu')
+      this.isQuizzActive = false
     },
 
     dislike: function () {
