@@ -11,7 +11,6 @@ import QuizzMovie from './views/QuizzMovie.vue'
 import QuizzTraits from './views/QuizzTraits.vue'
 import Swiper from './views/Swiper.vue'
 
-
 Vue.use(Router)
 
 export default new Router({

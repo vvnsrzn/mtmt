@@ -36,6 +36,9 @@ const userSchema = new Schema({
     type: String,
     enum: ['male', 'female']
   },
+  work: {
+    type: String,
+  },
   lookingForRange: [{
       min: {
         type: Number,
