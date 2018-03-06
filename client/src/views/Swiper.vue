@@ -40,7 +40,7 @@ export default {
   methods: {
     getProfile() {
       api
-        .getProfile('5a9e67c1104249234b50f33f')
+        .getProfile('5a9eeae9015a4265213c2be6')
         .then((user) => {
           console.log(user)
           this.user = user
