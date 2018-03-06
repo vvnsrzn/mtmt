@@ -1,75 +1,74 @@
 <template>
-  <div>
-    <form  @submit.prevent="setLookingFor">
-      <section class="container">
-          <h3>Je suis un.e</h3>
-        <b-field>
+  <div class="columns">
+    <div class="column">
+      <form @submit.prevent="setLookingFor">
+        <h1 class="title is-3">Mais qui es-tu ?</h1>
+        <br />
+        <h3 class="subtitle is-3">Je suis un.e</h3>
+          <b-field>
             <b-radio-button 
-                v-model="gender"
-                native-value="male"
-                type="is-danger">
-                <span>Homme</span>
+              v-model="gender"
+              native-value="male"
+              type="is-danger">
+              <span>Homme</span>
             </b-radio-button>
-
             <b-radio-button 
                 v-model="gender"
                 native-value="female"
                 type="is-success">
                 <span>Femme</span>
             </b-radio-button>
-
-        </b-field>
-          <h3>J'ai {{ age }} ans</h3>
-
+          </b-field>
+        <p class="subtitle">J'ai {{ age }} ans</p>
         <div class="block container">
           <el-slider v-model="age"
             :min="18"
             :max="50">
           </el-slider>
         </div>
-
-          <h3>Je recherche un.e</h3>
+        <h3 class="subtitle is-3">Je recherche un.e</h3>
         <b-field>
-            <b-radio-button 
-                v-model="lookingForGender"
-                native-value="male"
-                type="is-danger">
-                <span>Homme</span>
-            </b-radio-button>
-
-            <b-radio-button 
-                v-model="lookingForGender"
-                native-value="female"
-                type="is-success">
-                <span>Femme</span>
-            </b-radio-button>
-
+          <b-radio-button 
+            v-model="lookingForGender"
+            native-value="male"
+            type="is-danger">
+            <span>Homme</span>
+          </b-radio-button>
+          <b-radio-button 
+            v-model="lookingForGender"
+            native-value="female"
+            type="is-success">
+            <span>Femme</span>
+          </b-radio-button>
         </b-field>
-      <div class="block container">
-      Entre {{ lookingForRange[0] }} et {{ lookingForRange[1] }} printemps
-        <el-slider
-          v-model="lookingForRange"
-          range
-          show-stops
-          :min="18"
-          :max="50">
-        </el-slider>
-      </div>
-      <div class="block container">
-        <h3>Si tu devais te décrire en un tweet :</h3>
-          <b-field>
-            <b-input maxlength="280" 
-              v-model="bio"
-              type="textarea"
-              placeholder="Positive attitude"
-              ></b-input>
-          </b-field>
-      </div>
-
-    <button class="button is-primary">Next</button>      
-      </section>
+        <div class="block container">
+        <p class="subtitle">Entre {{ lookingForRange[0] }} et {{ lookingForRange[1] }} printemps</p>
+          <el-slider
+            v-model="lookingForRange"
+            range
+            show-stops
+            :min="18"
+            :max="50">
+          </el-slider>
+        </div>
+        <div class="block container">
+          <h3 class="subtitle is-3">Si tu devais te décrire en un tweet :</h3>
+            <b-field>
+              <b-input maxlength="280" 
+                v-model="bio"
+                type="textarea"
+                placeholder="Positive attitude">
+              </b-input>
+            </b-field>
+        </div>
+        <button class="button is-primary">Next</button>      
     </form>
   </div>
+  </div>
+</div>
+  
+  
+  
 </template>
 
 <script>
@@ -114,3 +113,16 @@ import api from '../api';
 
   }
 </script>
+
+<style scoped>
+
+.field.has-addons {
+  justify-content: center;
+  margin: 10px
+}
+
+.subtitle {
+  margin: 36px
+}
+
+</style>
