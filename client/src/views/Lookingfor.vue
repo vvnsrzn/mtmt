@@ -46,9 +46,9 @@
 
         </b-field>
       <div class="block container">
-      Entre {{ lookingForAge[0] }} et {{ lookingForAge[1] }} printemps
+      Entre {{ lookingForRange[0] }} et {{ lookingForRange[1] }} printemps
         <el-slider
-          v-model="lookingForAge"
+          v-model="lookingForRange"
           range
           show-stops
           :min="18"
@@ -79,12 +79,14 @@ import api from '../api';
     data () {
       return {
         gender: 'male',
-        lookingForAge: [26, 38],
+        lookingForRange: {
+          min: 26,
+          max: 38
+        },
         lookingForGender: 'male',
-        range: [26, 38],
         age: 24,
         bio: '',
-        id: '' // How to get the user id?        
+        id: ''      
       }
     },
     methods: {
@@ -93,7 +95,10 @@ import api from '../api';
           .setLookingFor({
             id: localStorage.getItem('id'),
             gender: this.gender,
-            range: this.lookingForAge,
+            lookingForRange:  {
+              min: this.lookingForRange[0],
+              max: this.lookingForRange[1]
+            },
             age: this.age,
             lookingForGender: this.lookingForGender,
             bio: this.bio

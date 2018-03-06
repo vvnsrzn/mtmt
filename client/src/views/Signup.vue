@@ -25,7 +25,6 @@ export default {
         .signup(
         )
         .then((data) => {
-          debugger
           this.$router.push('/about');
         })
         .catch(err => {

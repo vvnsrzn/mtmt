@@ -19,7 +19,6 @@ var upload = multer({
 })
 
 router.post('/upload', upload.single('photos'), function (req, res, next) {
-  // console.log(req.body)
   const {
     _id,
   } = req.body;
@@ -47,7 +46,6 @@ router.get(
     session: false
   }),
   (req, res) => {
-    // console.log(req.user.firstName);
     const payload = {
       id: req.user.id,
       firstName: req.user.firstName

@@ -47,6 +47,7 @@ export default {
   },
 
   setLookingFor(datas) {
+    console.log(datas)
     return mtmt
       .post(`/lookingfor`, datas)
       .then(res => res.data)

@@ -25,14 +25,16 @@ router.post('/api/lookingfor', function (req, res, next) {
     const {
       id,
       gender,
-      range,
+      lookingForRange,
       lookingForGender,
     } = req.body;
-    console.log(req.body.gender)
 
     User.findByIdAndUpdate(id, {
       gender: req.body.gender,
-      lookingForRange: req.body.range,
+      lookingForRange:  {
+        min: req.body.lookingForRange.min,
+        max: req.body.lookingForRange.max
+      },
       lookingForGender: req.body.lookingForGender,
       age: req.body.age,
       bio: req.body.bio
@@ -129,7 +131,6 @@ router.post('/api/sendtreshold', function (req, res, next) {
         quizzId: quizz._id
       }, (err, user) => {
         if (err) {
-          console.log('tutu');
           next(err);
         } else {
           res.json(user)
