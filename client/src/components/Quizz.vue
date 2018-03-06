@@ -1,8 +1,9 @@
 <template>
   <b-message class="quizz">
-    <button class="button block" @click="hide">Annuler</button>    
-    <h1 class="is-title">À ton avis...</h1>
-    <p>Quel est son groupe préféré ?</p>
+    <button class="button is-pulled-right" @click="hide"><i class="material-icons">highlight_off</i></button>    
+    <br />
+    <h1 class="title">À ton avis...</h1>
+    <p class="question">Quel est son groupe préféré ?</p>
     <form>
     <b-field>
       <b-radio-button v-model="radioButtonMusic"
@@ -27,7 +28,7 @@
       </b-radio-button>
      </b-field>
 
-     <p>Quel est son film préféré ?</p>
+     <p class="question">Quel est son film préféré ?</p>
     <b-field>
       <b-radio-button v-model="radioButtonMovie"
         native-value="A"
@@ -51,7 +52,7 @@
       </b-radio-button>
      </b-field>
 
-     <p>Quel est sa qualité principale ?</p>
+     <p class="question">Quel est sa qualité principale ?</p>
     <b-field>
       <b-radio-button v-model="radioButtonQuality"
         native-value="A"
@@ -75,7 +76,7 @@
       </b-radio-button>
      </b-field>
 
-     <p>Et son petit défaut ?</p>
+     <p class="question">Et son petit défaut ?</p>
     <b-field>
       <b-radio-button v-model="radioButtonDefect"
         native-value="A"
@@ -98,7 +99,9 @@
           <span>D</span>
       </b-radio-button>
      </b-field>
-     <button class="button is-primary">Je valide !</button>
+     <div>
+      <button class="button is-primary">Je valide !</button>
+     </div>
     </form>
     
   </b-message>
@@ -133,5 +136,8 @@
     margin: 0 auto;
     width: 20vw;
     text-align: center
+  }
+  .question {
+    font-size: 14px
   }
 </style>

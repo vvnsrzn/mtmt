@@ -7,6 +7,7 @@
 <style>
 
 @import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('http://fonts.googleapis.com/icon?family=Material+Icons');
 
 #app {
   font-family: 'Dosis', Helvetica, Arial, sans-serif;

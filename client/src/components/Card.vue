@@ -1,9 +1,9 @@
 <template>
 <div class="columns">
-  <div class="column flex-container">
+  <div class="column">
     <div class="card swiper p1">
       <header class="card-header">
-        <p class="card-header-title">
+        <p class="title">
           {{firstName}}
         </p>
         <a href="#" class="card-header-icon" aria-label="more options">
@@ -12,18 +12,14 @@
           </span>
         </a>
       </header>
-      <div class="img image is-180x180">
-        <img :src="photo" class=""/>
+      <div class="box image is-128x128">
+        <img :src="photo" class="top"/>
       </div>
       <div class="card-content">
         <div class="content">
-          <p>
-            <i class="material-icons">cake</i> {{ age }} ans</p>
-          <p>
-            <i class="material-icons">work</i> {{ work }}</p>
-          <p>
-            <i class="material-icons">keyboard</i>
-            <em> {{ bio }} </em>
+            <i class="material-icons">cake</i><p class="details"> {{ age }} ans</p>
+            <i class="material-icons">work</i><p class="details"> {{ work }} </p>
+            <i class="material-icons">keyboard</i><p class="details"> {{ bio }} </p>
           </p>
         </div>
       </div>
@@ -39,7 +35,7 @@
       </footer>
     </div>
   </div>
-    <div class= "column" v-if="isQuizzActive">
+    <div class="" v-if="isQuizzActive">
     <Quizz @hide="hideQuizz" />
   </div>
 </div>
@@ -84,6 +80,14 @@ export default {
 }
 </script>
 
-<style>
-  
+<style scoped>
+  .details {
+    font-size: 14px
+  }
+  .box {
+    margin: 0 auto
+  }
+  .swiper {
+    width: 50vh
+  }
 </style>
