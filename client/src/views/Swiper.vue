@@ -26,6 +26,7 @@ import Card from '@/components/Card.vue'
 
 export default {
   name: 'Swiper',
+  props: ['firstName', 'photo', 'age', 'work', 'bio', 'msg'],
   components: {
     Card,
     // Quizz

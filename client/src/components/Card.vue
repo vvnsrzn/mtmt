@@ -1,8 +1,5 @@
 <template>
-<div>
-  <div v-if="isQuizzActive">
-    <Quizz />
-  </div>
+<div class="columns">
   <div class="column flex-container">
     <div class="card swiper p1">
       <header class="card-header">
@@ -41,6 +38,9 @@
         </a>
       </footer>
     </div>
+  </div>
+    <div class= "column" v-if="isQuizzActive">
+    <Quizz />
   </div>
 </div>
 </template>
