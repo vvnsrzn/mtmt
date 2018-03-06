@@ -115,6 +115,17 @@ export default {
         console.error(err);
         throw err
       })
+  },
+
+  getProfile(id) {
+    console.log(id)
+    return mtmt
+      .get(`/getprofile/${id}`)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
   }
 
 }

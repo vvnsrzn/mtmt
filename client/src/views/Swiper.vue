@@ -11,6 +11,7 @@
       work="Ironhack"
       bio="Pourquoi on dit FBI à l'anglaise et CIA à la française ? Si tu as la réponse, clique sur le coeur. Si tu l'as pas, mais que tu veux m'aider à trouver la réponse clique aussi."
       />
+      <button class="button" @click.prevent="getProfile" >TEST API</button>
   </div>
 </div>
 </template>
@@ -18,14 +19,27 @@
 <script>
 // @ is an alias to /src
 import Card from '@/components/Card.vue'
+import api from '../api'
 // import Quizz from '@/components/Quizz.vue'
 
 export default {
   name: 'Swiper',
-  props: ['firstName', 'photo', 'age', 'work', 'bio', 'msg'],
+  props: ['id', 'firstName', 'photo', 'age', 'work', 'bio', 'msg'],
   components: {
     Card,
   },
+  methods: {
+    getProfile() {
+      api
+        .getProfile('5a9e67c1104249234b50f33d')
+        .then((profile) => {
+          console.log(profile)
+        })
+        .catch(err => {
+          this.error = err;
+        })
+    }
+  }
 }
 </script>
 <style>
