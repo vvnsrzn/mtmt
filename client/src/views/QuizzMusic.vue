@@ -2,7 +2,7 @@
 <div>
     <div class="container">
         <img src="https://lh3.googleusercontent.com/D_04_AQH-II9TyLU26GDtFxPZohYWbl-SGKb1msbi5XlIGMAEr0HI01RvZ7Afi5BzQ=w300">
-        <h2>Quel est ton groupe préféré ?</h2>
+        <h2 class="title is-3">Quel est ton groupe préféré ?</h2>
         <form>
           <div class="box has-text-centered">
             <b-field>
@@ -86,7 +86,8 @@ import api from '../api';
 
 <style scoped>
   img {
-    width: 50px
+    margin-top: 12px;
+    width: 90px
   },
   box {
     margin: 0 auto

@@ -2,7 +2,7 @@
 <div>
     <div class="container">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQje1pC1ZrC8L5RAztL1pZp8HYhkavmj_HmTITHLJ3EzUwAhqRT">
-        <h2>Quel est ton film préféré ?</h2>
+        <h2 class="title is-3">Quel est ton film préféré ?</h2>
         <form>
           <div class="box has-text-centered">
             <b-field>
@@ -84,7 +84,8 @@ import api from '../api';
 
 <style scoped>
   img {
-    width: 50px
+    margin-top: 12px;
+    width: 90px
   },
   box {
     margin: 0 auto
