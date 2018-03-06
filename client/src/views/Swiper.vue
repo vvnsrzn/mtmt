@@ -4,14 +4,13 @@
     Messagerie
   </div>
   <div class="column swiper">
-    <Card 
+    <Card
       :firstName="user.firstName"
       :photo="user.photos[0]"
       :age="user.age"
       :work="user.work"
       :bio="user.bio"
     />
-    <button class="button" @click.prevent="getProfile" >TEST API</button>
   </div>
 </div>
 </template>
@@ -57,13 +56,6 @@ export default {
 }
 </script>
 <style>
-  .swiper {
-    background-color: #eee;
-  }
-
-  .card {
-    background-color: #fff;
-  }
 
   .img {
     margin: 10px;

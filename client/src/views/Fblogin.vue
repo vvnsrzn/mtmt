@@ -1,24 +1,27 @@
 <template>
-  <div>
+  <div class="welcome columns is-vcentered">
+    <div class="column">
     <p>
-      Bonjour {{firstName}} (id: {{id}}), <br />
-      bienvenue sur MTMT <br /> le swipe réinventé
+      Bonjour {{firstName}},<br />
     </p>
-    <p>Choisis toi une photo de profil</p>
+    <br />
+    <br />
+    <p>Ton inscription s'est bien passée.</p>
+    <p>Il faut maintenant que tu choissises une photo de profil</p>
+    <br />
     <form @submit.prevent="(e) => {uploadPicture(e)}">
     <b-upload v-model="files">
             <a class="button is-primary">
                 <b-icon icon="upload"></b-icon>
-                <span>Click to upload</span>
+                <span>Choisir une photo</span>
             </a>
-        </b-upload>
+    </b-upload>
         <div v-if="files && files.length">
-            <span class="file-name">
-                {{ files[0].name }}
-            </span>
+          <img src="http://mtmt.viviansarazin.com/images/welcome.gif" />
         </div>
-        <button class="button is-primary">Signup</button>
+        <button class="button is-primary" v-if="files && files.length">Valider</button>
         </form>
+        </div>
   </div>
 </template>
 
@@ -53,3 +56,19 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+.welcome {
+  height: 100vh;
+  background-image: url('http://mtmt.viviansarazin.com/images/couple.jpeg');
+  color: white;
+  margin: 0 auto  ;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  text-align: center
+}
+
+
+</style>

@@ -1,8 +1,9 @@
 <template>
   <div>
-    <p>Welcome</p>
+    <p>Bienvenue sur MTMT</p>
+    <p>Merci de vous connecter via Facebook</p>
       <a href="http://localhost:3000/api/auth/facebook">
-      Signup with Facebook</a>
+      Continuer avec Facebook</a>
   </div>
 </template>
 
