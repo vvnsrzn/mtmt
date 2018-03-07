@@ -52,7 +52,7 @@ router.get(
     };
     const token = jwt.encode(payload, config.jwtSecret);
     console.log(payload.firstName);
-    res.redirect(`http://localhost:8080/auth/facebook/callback?token=${token}&firstName=${payload.firstName}&id=${payload.id}`);
+    res.redirect(`http://mtmt.herokuapp.com/auth/facebook/callback?token=${token}&firstName=${payload.firstName}&id=${payload.id}` || `http://localhost:8080/auth/facebook/callback?token=${token}&firstName=${payload.firstName}&id=${payload.id}`);
   }
 );
 
