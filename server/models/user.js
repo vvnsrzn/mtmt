@@ -39,19 +39,18 @@ const userSchema = new Schema({
   work: {
     type: String,
   },
-  lookingForRange: [{
-      min: {
-        type: Number,
-        min: 18,
-        max: 99,
-      },
-      max: {
-        type: Number,
-        min: 18,
-        max: 99,
-      },
-    }
-  ],
+  lookingForRange: {
+    min: {
+      type: Number,
+      min: 18,
+      max: 99,
+    },
+    max: {
+      type: Number,
+      min: 18,
+      max: 99,
+    },
+  },
   firstName: {
     type: String,
     // required: true,

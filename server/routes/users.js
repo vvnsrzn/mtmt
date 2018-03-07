@@ -25,9 +25,11 @@ router.get('/api/getmatches/:id', function (req, res, next) {
     if (err) {
       next (err);
     } else {
+      console.log(user)
       User
       .find({
-        gender: user.lookingForGender 
+        gender: user.lookingForGender,
+        age: { $gte : user.lookingForRange.min, $lte: user.lookingForRange.max } 
       })
       .limit(100)
       .exec((err, users) => {
