@@ -1,0 +1,21 @@
+{
+  "name": "mtmt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd server && npm install",
+    "start": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VivianSolide/mtmt.git"
+  },
+  "keywords": [],
+  "author": "Vivian Sarazin (Ironhack - Paris)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VivianSolide/mtmt/issues"
+  },
+  "homepage": "https://github.com/VivianSolide/mtmt#readme"
+}
