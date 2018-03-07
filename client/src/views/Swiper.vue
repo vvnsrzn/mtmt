@@ -11,6 +11,7 @@
       :work="user.work"
       :bio="user.bio"
     />
+  <button class="button" @click.prevent="getMatches" >TEST</button>
   </div>
 </div>
 </template>
@@ -34,6 +35,13 @@ export default {
         firstName: '',
         work: '',
         bio: ''
+      },
+      users: {
+        photos: [],
+        age: '',
+        firstName: '',
+        work: '',
+        bio: ''
       }
     }
   },
@@ -42,8 +50,17 @@ export default {
       api
         .getProfile('5a9eeae9015a4265213c2be6')
         .then((user) => {
-          console.log(user)
           this.user = user
+        })
+        .catch(err => {
+          this.error = err;
+        })
+    },
+    getMatches() {
+      api
+        .getMatches(localStorage.getItem("id"))
+        .then((users) => {
+          this.users = users
         })
         .catch(err => {
           this.error = err;
@@ -51,6 +68,7 @@ export default {
     }
   },
   beforeMount() {
+    // this.getMatches()
     this.getProfile()
   },
 }

@@ -8,6 +8,8 @@ const upload = multer({
 const User = require('../models/user');
 const Quizz = require('../models/quizz');
 
+//////////////////////////////////////////////
+
 router.get('/api/getprofile/:id', function (req, res, next) {
   User.findById(req.params.id, function (err, user) {
     if (err) {
@@ -17,6 +19,12 @@ router.get('/api/getprofile/:id', function (req, res, next) {
     }
   })
 })
+
+router.get('/api/getmatches/:id', function (req, res, next) {
+  console.log('yolo')
+})
+
+//////////////////////////////////////////////
 
 router.post('/profile', upload.single('photo'), function (req, res, next) {
   User.findByIdAndUpdate(req.user._id, {

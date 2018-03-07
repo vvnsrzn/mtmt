@@ -25,17 +25,15 @@
       </div>
       <footer class="card-footer">
         <a href="#" class="card-footer-item">
-          <!-- <i class="material-icons">cancel</i> -->
           <button v-on:click.prevent="dislike" class="button is-black">Dislike</button>        
         </a>
         <a href="#" class="card-footer-item">
-          <!-- <i class="material-icons heart">favorite</i> -->
           <button v-on:click.prevent="like" class="button is-primary">Like</button>
         </a>
       </footer>
     </div>
   </div>
-    <div class="" v-if="isQuizzActive">
+    <div v-if="isQuizzActive">
     <Quizz @hide="hideQuizz" />
   </div>
 </div>

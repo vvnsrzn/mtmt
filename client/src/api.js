@@ -118,10 +118,20 @@ export default {
   },
 
   getProfile(id) {
-    console.log(id)
     return mtmt
       .get(`/getprofile/${id}`)
       .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
+  },
+
+  getMatches(id){
+    console.log(id)
+    return mtmt
+      .get(`/getmatches/${id}`)
+      .then(res = res.data)
       .catch(err => {
         console.error(err);
         throw err
