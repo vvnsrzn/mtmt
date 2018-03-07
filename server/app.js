@@ -85,7 +85,6 @@ passport.use(
   )
 );
 
-const index = require('./routes/index');
 const authRoutes = require('./routes/auth');
 const spotify = require('./routes/spotify');
 const tmdb = require('./routes/tmdb');
