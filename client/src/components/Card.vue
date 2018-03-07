@@ -60,7 +60,6 @@ export default {
     age: String,
     work: String,
     bio: String,
-    // isQuizzActive: Boolean
   },
   methods: {
     like: function () {

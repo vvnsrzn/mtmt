@@ -1,15 +1,15 @@
 import axios from 'axios'
 
 const mtmt = axios.create({
-  baseURL: process.env.API_MAIN_URL || 'http://localhost:3000/api',
+  baseURL: process.env.NODE_ENV === "production" ? '/api' : "http://localhost:3000/api"
 });
 
 const spotify = axios.create({
-  baseURL: process.env.API_SPOTIFY_URL || 'http://localhost:3000/spotify',
+  baseURL: process.env.NODE_ENV === "production" ? '/spotify' : "http://localhost:3000/spotify"
 });
 
 const tmdb = axios.create({ 
-  baseURL: 'http://localhost:3000/tmdb',
+  baseURL: process.env.NODE_ENV === "production" ? '/tmdb' : "http://localhost:3000/tmdb"
 })
 
 const errHandler = err => {
