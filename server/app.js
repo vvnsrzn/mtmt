@@ -5,6 +5,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const history = require('express-history-api-fallback')
 
 const passport = require('passport');
 const User = require('./models/user');
@@ -90,7 +91,7 @@ const spotify = require('./routes/spotify');
 const tmdb = require('./routes/tmdb');
 const users = require('./routes/users');
 
-app.use('/', index);
+// app.use('/', index);
 app.use('/api', authRoutes);
 app.use('/spotify', spotify);
 app.use('/tmdb', tmdb);
@@ -107,6 +108,11 @@ app.get(
     res.json(req.user);
   }
 );
+
+// use dist
+const clientRoot = path.join(__dirname, '../client/dist');
+app.use('/', express.static(clientRoot))
+app.use(history('index.html', { root: clientRoot }))
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
