@@ -130,7 +130,7 @@ export default {
   getMatches(id){
     return mtmt
       .get(`/getmatches/${id}`)
-      .then(res = res.data)
+      .then(res => res.data)
       .catch(err => {
         console.error(err);
         throw err

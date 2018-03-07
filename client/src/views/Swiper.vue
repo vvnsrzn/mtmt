@@ -5,11 +5,11 @@
   </div>
   <div class="column swiper">
     <Card
-      :firstName="user.firstName"
-      :photo="user.photos[0]"
-      :age="user.age"
-      :work="user.work"
-      :bio="user.bio"
+      :firstName="users[0].firstName"
+      :photo="users[0].photos[0]"
+      :age="users[0].age"
+      :work="users[0].work"
+      :bio="users[0].bio"
     />
   <button class="button" @click.prevent="getMatches" >TEST</button>
   </div>
@@ -46,16 +46,16 @@ export default {
     }
   },
   methods: {
-    getProfile() {
-      api
-        .getProfile('5a9eeae9015a4265213c2be6')
-        .then((user) => {
-          this.user = user
-        })
-        .catch(err => {
-          this.error = err;
-        })
-    },
+    // getProfile() {
+    //   api
+    //     .getProfile('5a9eeae9015a4265213c2be6')
+    //     .then((user) => {
+    //       this.user = user
+    //     })
+    //     .catch(err => {
+    //       this.error = err;
+    //     })
+    // },
     getMatches() {
       api
         .getMatches(localStorage.getItem("id"))
@@ -68,8 +68,8 @@ export default {
     }
   },
   beforeMount() {
-    // this.getMatches()
-    this.getProfile()
+    this.getMatches()
+    // this.getProfile()
   },
 }
 </script>

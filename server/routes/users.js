@@ -34,7 +34,6 @@ router.get('/api/getmatches/:id', function (req, res, next) {
       .limit(100)
       .exec((err, users) => {
         if (err) {
-          console.log(user.lookingForGender)      
           next(err);
         } else {
           res.json(users)
