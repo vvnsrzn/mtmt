@@ -21,7 +21,26 @@ router.get('/api/getprofile/:id', function (req, res, next) {
 })
 
 router.get('/api/getmatches/:id', function (req, res, next) {
-  console.log('yolo')
+  User.findById(req.params.id, function (err, user) {
+    if (err) {
+      next (err);
+    } else {
+      User
+      .find({
+        gender: user.lookingForGender 
+      })
+      .limit(100)
+      .exec((err, users) => {
+        if (err) {
+          console.log(user.lookingForGender)      
+          next(err);
+        } else {
+          res.json(users)
+        }
+      })
+    }
+  })
+
 })
 
 //////////////////////////////////////////////

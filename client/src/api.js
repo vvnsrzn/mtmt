@@ -128,7 +128,6 @@ export default {
   },
 
   getMatches(id){
-    console.log(id)
     return mtmt
       .get(`/getmatches/${id}`)
       .then(res = res.data)
