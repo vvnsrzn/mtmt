@@ -203,3 +203,5 @@ const quality = [
 'Volontaire',
 'Vrai(e)'
 ]
+
+module.exports = quality

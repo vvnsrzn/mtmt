@@ -72,7 +72,7 @@ export default {
     },
 
     dislike: function () {
-      console.log('tutu')      
+      this.$emit('next')
     },
   }
 }
