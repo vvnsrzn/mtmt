@@ -30,6 +30,7 @@ router.get('/api/getmatches/:id', function (req, res, next) {
       .find({
         gender: user.lookingForGender,
         age: { $gte : user.lookingForRange.min, $lte: user.lookingForRange.max } 
+        // how to exclude others?
       })
       .limit(100)
       .exec((err, users) => {
