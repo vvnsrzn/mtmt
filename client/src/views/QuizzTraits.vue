@@ -81,7 +81,6 @@ import api from '../api';
                     }
                 })
                 .then((data) => {
-                    console.log(data)
                     this.$router.push('/swiper');
                     })
                     .catch(err => {

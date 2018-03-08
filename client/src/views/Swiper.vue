@@ -6,6 +6,7 @@
   <div class="column">
     <Card 
       @like="getQuizz"
+      v-if="users.length"
       @dislike="increment"
       :firstName="users[this.counter].firstName"
       :photo="users[this.counter].photos[0]"
@@ -17,6 +18,7 @@
     <div class="column">
     <Quizz
       @hide="isQuizzActive = false"
+      @post="postQuizz"
       v-if="isQuizzActive"
       :music="this.quizz[0].music.answer"
       :movie="this.quizz[0].movie.answer"
@@ -26,6 +28,7 @@
       :brmovie="this.quizz[0].movie.badResponses"
       :brquality="this.quizz[0].traits.quality.badResponses"
       :brdefect="this.quizz[0].traits.defect.badResponses"
+      :treshold="this.quizz[0].treshold"
     />
     </div>
   </div>
@@ -73,21 +76,12 @@
           bio: ""
         },
         quizz: {},
-        users: {
-          photos: [],
-          age: 0,
-          firstName: "",
-          work: "",
-          bio: ""
-        },
+        users: [],
         isQuizzActive: false,
         counter: 0
       };
     },
     methods: {
-      yo: function() {
-        console.log('yo')
-      },
       hideQuizz: function() {
         this.isQuizzActive = false;
       },
@@ -102,19 +96,34 @@
           });
       },
       getQuizz() {
-        this.isQuizzActive = true;
         api
-          .getQuizz('5aa008ef17ae08328a694e3f')
+          .getQuizz(this.users[this.counter]._id)
           .then(quizz => {
             this.quizz = quizz;
+            this.isQuizzActive = true;
           })
           .catch(err => {
             this.error = err;
           });
       },
+      postQuizz(e) {
+        api
+          .postQuizz({
+            _id: this.quizz[0]._id,
+            _userRequester: localStorage.getItem("id"),
+            _userCandidate: this.users[this.counter]._id,
+          ...e
+          })
+          .then(data => {
+            console.log(data);
+          })
+          .catch(err => {
+            this.error =err
+          })
+      },
       increment() {
         this.counter++;
-        this.isQuizzActive = false
+        this.isQuizzActive = false;
       }
     },
     beforeMount() {

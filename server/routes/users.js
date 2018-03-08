@@ -10,6 +10,15 @@ const Quizz = require("../models/quizz");
 
 //////////////////////////////////////////////
 
+router.post("/api/postquizz/", function (req, res, next) {
+    console.log(req.body)
+    res.json({
+        message: req.body
+    })
+})
+
+//////////////////////////////////////////////
+
 router.get("/api/getprofile/:id", function(req, res, next) {
     User.findById(req.params.id, function(err, user) {
         if (err) {
