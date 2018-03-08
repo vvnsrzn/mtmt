@@ -21,7 +21,7 @@ User.find({})
             next(err);
         } else {
             var file = [];
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 20000; i++) {
                 let fakeDatas = {
                     userId: faker.random.arrayElement(users),
                     treshold: faker.random.number({ min: 0, max: 100 }),

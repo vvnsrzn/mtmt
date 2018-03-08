@@ -6,7 +6,7 @@ var faker = require('faker');
 faker.locale = "fr";
 
 var file = [];
-for (let i = 0; i < 2000; i++) {
+for (let i = 0; i < 20000; i++) {
   
   let fakeDatas = {
     facebookId: faker.random.number(),
