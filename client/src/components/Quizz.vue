@@ -3,16 +3,13 @@
     <button class="button is-pulled-right" @click="hide"><i class="material-icons">highlight_off</i></button>    
     <br />
     <h1 class="title">À ton avis...</h1>
-
-    {{music}}
-
     <p class="question">Quel est son groupe préféré ?</p>
     <form>
     <b-field>
       <b-radio-button v-model="radioButtonMusic"
         native-value="A"
         type="is-danger">
-        <span>A</span>
+        <span>{{music}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMusic"
           native-value="B"
@@ -41,7 +38,7 @@
       <b-radio-button v-model="radioButtonMovie"
           native-value="B"
           type="is-success">
-          <span>B</span>
+          <span>{{movie}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMovie"
           native-value="C"
@@ -70,7 +67,7 @@
       <b-radio-button v-model="radioButtonQuality"
           native-value="C"
           type="is-danger">
-          <span>C</span>
+          <span>{{ quality }}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonQuality"
           native-value="D"
@@ -84,7 +81,7 @@
       <b-radio-button v-model="radioButtonDefect"
         native-value="A"
         type="is-danger">
-        <span>A</span>
+        <span>{{ defect }}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonDefect"
           native-value="B"
@@ -113,7 +110,7 @@
 <script>
   export default {
     name: "Quizz",
-    props: ["music", "movie", "traits"],
+    props: ["music", "movie", "quality", "defect"],
     data() {
       return {
         radioButtonMusic: "",
@@ -133,7 +130,7 @@
 <style>
   .quizz {
     margin: 0 auto;
-    width: 20vw;
+    /* width: 20vw; */
     text-align: center;
   }
   .question {

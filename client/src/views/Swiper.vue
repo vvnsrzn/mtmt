@@ -18,7 +18,10 @@
     <Quizz
       @hide="isQuizzActive = false"
       v-if="isQuizzActive"
-      :music="music.answer"
+      :music="this.quizz[0].music.answer"
+      :movie="this.quizz[0].movie.answer"
+      :quality="this.quizz[0].traits.quality.answer"
+      :defect="this.quizz[0].traits.defect.answer"
     />
     </div>
   </div>
@@ -58,13 +61,13 @@
             badResponses: []
           }
         },
-        // user: {
-        //   photos: [],
-        //   age: "",
-        //   firstName: "",
-        //   work: "",
-        //   bio: ""
-        // },
+        user: {
+          photos: [],
+          age: "",
+          firstName: "",
+          work: "",
+          bio: ""
+        },
         quizz: {},
         users: {
           photos: [],
@@ -97,9 +100,8 @@
       getQuizz() {
         this.isQuizzActive = true;
         api
-          .getQuizz(this.users.id)
+          .getQuizz('5aa008ef17ae08328a694e3f')
           .then(quizz => {
-            console.log("front");
             this.quizz = quizz;
           })
           .catch(err => {
