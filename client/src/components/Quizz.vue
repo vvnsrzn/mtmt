@@ -14,17 +14,17 @@
       <b-radio-button v-model="radioButtonMusic"
           native-value="B"
           type="is-dark">
-          <span>B</span>
+          <span>{{brmusic[0]}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMusic"
           native-value="C"
           type="is-dark">
-          <span>C</span>
+          <span>{{brmusic[1]}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMusic"
           native-value="D"
           type="is-dark">
-          <span>D</span>
+          <span>{{brmusic[2]}}</span>
       </b-radio-button>
      </b-field>
 
@@ -33,7 +33,7 @@
       <b-radio-button v-model="radioButtonMovie"
         native-value="A"
         type="is-dark">
-        <span>A</span>
+        <span>{{brmovie[0]}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMovie"
           native-value="B"
@@ -43,12 +43,12 @@
       <b-radio-button v-model="radioButtonMovie"
           native-value="C"
           type="is-dark">
-          <span>C</span>
+          <span>{{brmovie[1]}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMovie"
           native-value="D"
           type="is-dark">
-          <span>D</span>
+          <span>{{brmovie[2]}}</span>
       </b-radio-button>
      </b-field>
 
@@ -57,12 +57,12 @@
       <b-radio-button v-model="radioButtonQuality"
         native-value="A"
         type="is-dark">
-        <span>A</span>
+        <span>{{brquality[0]}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonQuality"
           native-value="B"
           type="is-dark">
-          <span>B</span>
+          <span>{{brquality[1]}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonQuality"
           native-value="C"
@@ -72,7 +72,7 @@
       <b-radio-button v-model="radioButtonQuality"
           native-value="D"
           type="is-dark">
-          <span>D</span>
+          <span>{{brquality[2]}}</span>
       </b-radio-button>
      </b-field>
 
@@ -86,17 +86,17 @@
       <b-radio-button v-model="radioButtonDefect"
           native-value="B"
           type="is-dark">
-          <span>B</span>
+          <span>{{brdefect[0]}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonDefect"
           native-value="C"
           type="is-dark">
-          <span>C</span>
+          <span>{{brdefect[1]}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonDefect"
           native-value="D"
           type="is-dark">
-          <span>D</span>
+          <span>{{brdefect[2]}}</span>
       </b-radio-button>
      </b-field>
      <div>
@@ -110,7 +110,7 @@
 <script>
   export default {
     name: "Quizz",
-    props: ["music", "movie", "quality", "defect"],
+    props: ["music", "movie", "quality", "defect", "brmusic", "brmovie", "brquality", "brdefect"],
     data() {
       return {
         radioButtonMusic: "",

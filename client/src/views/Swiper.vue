@@ -11,7 +11,7 @@
       :photo="users[this.counter].photos[0]"
       :age="users[this.counter].age"
       :work="users[this.counter].work"
-      :bio="users[this.counter].bio"
+      :bio="users[this.counter].bio"      
     />
   </div>
     <div class="column">
@@ -22,6 +22,10 @@
       :movie="this.quizz[0].movie.answer"
       :quality="this.quizz[0].traits.quality.answer"
       :defect="this.quizz[0].traits.defect.answer"
+      :brmusic="this.quizz[0].music.badResponses"
+      :brmovie="this.quizz[0].movie.badResponses"
+      :brquality="this.quizz[0].traits.quality.badResponses"
+      :brdefect="this.quizz[0].traits.defect.badResponses"
     />
     </div>
   </div>
@@ -110,6 +114,7 @@
       },
       increment() {
         this.counter++;
+        this.isQuizzActive = false
       }
     },
     beforeMount() {
