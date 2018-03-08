@@ -158,7 +158,6 @@ export default {
     },
 
     postQuizz(datas) {
-      console.log('api:', datas)
       return mtmt
         .post(`/postquizz/`, datas)
         .then(res => res.data)

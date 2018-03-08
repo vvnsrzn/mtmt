@@ -91,8 +91,9 @@ import api from '../api';
   img {
     margin-top: 12px;
     width: 90px
-  },
+  }
   box {
     margin: 0 auto
   }
+  
 </style>

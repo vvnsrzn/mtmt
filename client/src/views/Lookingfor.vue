@@ -1,6 +1,6 @@
 <template>
   <div class="columns">
-    <div class="column">
+    <div class="column is-one-third box">
       <form @submit.prevent="setLookingFor">
         <h1 class="title is-3">Mais qui es-tu ?</h1>
         <br />
@@ -20,7 +20,7 @@
             </b-radio-button>
           </b-field>
         <p class="subtitle">J'ai {{ age }} ans</p>
-        <div class="block container">
+        <div class="">
           <el-slider v-model="age"
             :min="18"
             :max="50">
@@ -41,7 +41,7 @@
             <span>Femme</span>
           </b-radio-button>
         </b-field>
-        <div class="block container">
+        <div class="">
         <p class="subtitle">Entre {{ lookingForRange[0] }} et {{ lookingForRange[1] }} printemps</p>
           <el-slider
             v-model="lookingForRange"
@@ -51,7 +51,7 @@
             :max="50">
           </el-slider>
         </div>
-        <div class="block container">
+        <div class="">
           <h3 class="subtitle is-3">Si tu devais te décrire en un tweet :</h3>
             <b-field>
               <b-input maxlength="280" 
@@ -118,6 +118,17 @@
 </script>
 
 <style scoped>
+
+ 
+
+  .box {
+    padding-top: 5vh;
+    margin: 0 auto;
+    margin-top: 5vh !important;
+    background-color: white;
+    border-radius: 5px
+  }
+
   .field.has-addons {
     justify-content: center;
     margin: 10px;

@@ -1,6 +1,6 @@
 <template>
 <div class="columns is-vcentered">
-  <div class="column">
+  <div class="column box is-one-third">
   <h1 class="title is-3">Quizz info</h1>
   <p>C'est ici que tout se passe.</p>
   <p>Comme tu le sais déjà, la force de cette application réside dans ce quizz.</p>
@@ -9,7 +9,7 @@
 
   <p>Mais pour que tu gardes un contrôle sur la difficulté, nous te proposons que tu inscrives ton seuil de tolérance.</p>
   <br />
-  <div class=" container">
+  <div class="">
     <p>{{ treshold }} %</p>
     <el-slider v-model="treshold"
       :value="50"
@@ -64,4 +64,13 @@ import api from '../api';
 .small {
   font-size: 12px
 }
+
+.box {
+  margin: 0 auto
+}
+
+.columns {
+  height: 105vh
+}
+
 </style>
