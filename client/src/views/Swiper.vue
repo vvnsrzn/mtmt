@@ -36,6 +36,9 @@ export default {
         work: '',
         bio: '',
       },
+      quizz: {
+
+      },
       users: {
         photos: [],
         age: '',
@@ -56,6 +59,16 @@ export default {
         .catch(err => {
           this.error = err;
         })
+    },
+    getQuizz() {
+      api
+      .getQuizz(id)
+      .then((quizz) => {
+        this.quizz = quizz
+      })
+      .catch(err => {
+        this.error = err;
+      })
     },
     increment(){
       this.counter++;

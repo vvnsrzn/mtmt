@@ -137,4 +137,14 @@ export default {
       })
   },
 
+  getQuizz(id){
+    return mtmt
+      .get(`/getquizz/${id}`)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err
+      })
+  }
+
 }
