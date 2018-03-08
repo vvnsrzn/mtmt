@@ -5,7 +5,7 @@
   </div>
   <div class="column">
     <div>
-      <div v-if="result === 'BRAVO'">
+      <!-- <div v-if="result === 'BRAVO'">
         <button class="button is-medium is-success">
           Tu es trop fort.e pour être réel !
         </button>
@@ -14,7 +14,7 @@
         <button class="button is-medium is-danger" @click="danger">
           T'es nul.le
         </button>
-      </div>
+      </div> -->
     </div>
 
     <Card 
@@ -129,8 +129,13 @@
             ...e
           })
           .then(result => {
-            console.log(result.message);
             this.result = result.message;
+            if(result.message === 'BRAVO') {
+              this.success();
+            }
+            else {
+              this.danger();
+            }
             this.increment();
           })
           .catch(err => {
@@ -141,20 +146,23 @@
         this.counter++;
         this.isQuizzActive = false;
       },
+
       success() {
         this.$toast.open({
-          message: "Something happened correctly!",
+          message: "Bravo! Quizz réussi :)",
           type: "is-success"
         });
       },
+
       danger() {
         this.$toast.open({
           duration: 5000,
-          message: `Something's not good, also I'm on bottom`,
+          message: `Dommage... Essaye encore !`,
           position: "is-bottom",
           type: "is-danger"
         });
       }
+
     },
     beforeMount() {
       this.getMatches();
