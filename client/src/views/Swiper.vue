@@ -1,9 +1,9 @@
 <template>
-  <div class="columns">
+  <div class="columns  is-vcentered">
     <div class="column is-one-quarter chat">
       Messagerie
     </div>
-    <div class="column">
+    <div class="column is-one-half">
       <Card 
         @like="getQuizz"
         v-if="users.length"
@@ -15,7 +15,16 @@
         :bio="users[this.counter].bio"      
       />
     </div>
-    <div class="column">
+    <div class="column is-one-third">
+      <span v-if="this.counter === 0">
+        <h2 class="subtitle">Comment ça marche?</h2>
+        <p>Clicque sur "Ouvrir le Quizz" pour tenter ta chance!</p>
+        <img src="https://media.giphy.com/media/ToMjGpKniGqRNLGBrhu/giphy.gif" alt="">
+      </span>
+      <span v-if="this.counter === 5">
+        <h2 class="subtitle">Alors? Tu t'en sors?</h2>
+        <img src="https://media.giphy.com/media/Jlt69Ka6SwtH2/giphy.gif" alt="">
+      </span>
       <Quizz
         @hide="isQuizzActive = false"
         @post="postQuizz"
@@ -150,6 +159,9 @@
     },
     beforeMount() {
       this.getMatches();
+
+      
+
     }
   };
 </script>
