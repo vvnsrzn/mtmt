@@ -25,12 +25,10 @@ router.get('/api/getmatches/:id', function (req, res, next) {
     if (err) {
       next (err);
     } else {
-      console.log(user)
       User
       .find({
         gender: user.lookingForGender,
         age: { $gte : user.lookingForRange.min, $lte: user.lookingForRange.max } 
-        // how to exclude others?
       })
       .limit(100)
       .exec((err, users) => {
@@ -42,7 +40,6 @@ router.get('/api/getmatches/:id', function (req, res, next) {
       })
     }
   })
-
 })
 
 //////////////////////////////////////////////
@@ -162,7 +159,7 @@ router.post('/api/sendtreshold', function (req, res, next) {
   Quizz.create({
     userId: req.body.userId,
     treshold: req.body.treshold},
-  (err, quizz) => {
+    (err, quizz) => {
     if (err) {
       next(err);
     } else {
@@ -176,8 +173,7 @@ router.post('/api/sendtreshold', function (req, res, next) {
         }
       })
     }
-  }
-  )
+  })
 })
 
 
