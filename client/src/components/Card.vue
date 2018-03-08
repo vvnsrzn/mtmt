@@ -71,7 +71,8 @@ export default {
     },
 
     dislike: function () {
-      this.$emit('next')
+      this.$emit('next');
+      this.isQuizzActive = false
     },
   }
 }
