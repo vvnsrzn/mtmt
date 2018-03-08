@@ -138,7 +138,6 @@
         this.$emit("hide");
       },
       postQuizz() {
-        console.log(this.answerUserDefect);
         this.$emit("post", {
           musicAnswer: this.answerUserMusic,
           movieAnswer: this.answerUserMovie,
@@ -154,7 +153,7 @@
   .quizz {
     margin: 0 auto;
     text-align: center;
-  };
+  }
   .question {
     font-size: 14px;
   }

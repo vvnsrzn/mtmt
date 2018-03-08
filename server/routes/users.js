@@ -10,12 +10,36 @@ const Quizz = require("../models/quizz");
 
 //////////////////////////////////////////////
 
-router.post("/api/postquizz/", function (req, res, next) {
-    console.log(req.body)
-    res.json({
-        message: req.body
-    })
-})
+router.post("/api/postquizz/", function(req, res, next) {
+    Quizz.findById(req.body._id, function(err, quizz) {
+        if (err) {
+            next(err);
+        } else {
+            var score = 0;
+            if (req.body.musicAnswer === "A") {
+                score = 25;
+            }
+            if (req.body.movieAnswer === "B") {
+                score += 25;
+            }
+            if (req.body.qualityAnswer === "C") {
+                score += 25;
+            }
+            if (req.body.defectAnswer === "A") {
+                score += 25;
+            }
+            if (score > quizz.treshold) {
+                res.json({
+                    message: "BRAVO"
+                });
+            } else {
+                res.json({
+                    message: "NOPE"
+                });
+            }
+        }
+    });
+});
 
 //////////////////////////////////////////////
 
@@ -56,14 +80,14 @@ router.get("/api/getmatches/:id", function(req, res, next) {
 //////////////////////////////////////////////
 
 router.get("/api/getquizz/:id", function(req, res, next) {
-  console.log(req.params.id)
+    console.log(req.params.id);
     Quizz.find({
-      userId: req.params.id
+        userId: req.params.id
     }).exec((err, userQuizz) => {
         if (err) {
             next(err);
         } else {
-          res.json(userQuizz)
+            res.json(userQuizz);
         }
     });
 });
