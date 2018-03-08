@@ -4,6 +4,19 @@
     Messagerie
   </div>
   <div class="column">
+    <div>
+      <div v-if="result === 'BRAVO'">
+        <button class="button is-medium is-success">
+          Tu es trop fort.e pour être réel !
+        </button>
+      </div>
+      <div v-else-if="result === 'NOPE'">
+        <button class="button is-medium is-danger" @click="danger">
+          T'es nul.le
+        </button>
+      </div>
+    </div>
+
     <Card 
       @like="getQuizz"
       v-if="users.length"
@@ -78,7 +91,8 @@
         quizz: {},
         users: [],
         isQuizzActive: false,
-        counter: 0
+        counter: 0,
+        result: ""
       };
     },
     methods: {
@@ -112,18 +126,34 @@
             _id: this.quizz[0]._id,
             _userRequester: localStorage.getItem("id"),
             _userCandidate: this.users[this.counter]._id,
-          ...e
+            ...e
           })
-          .then(data => {
-            console.log(data);
+          .then(result => {
+            console.log(result.message);
+            this.result = result.message;
+            this.increment();
           })
           .catch(err => {
-            this.error =err
-          })
+            this.error = err;
+          });
       },
       increment() {
         this.counter++;
         this.isQuizzActive = false;
+      },
+      success() {
+        this.$toast.open({
+          message: "Something happened correctly!",
+          type: "is-success"
+        });
+      },
+      danger() {
+        this.$toast.open({
+          duration: 5000,
+          message: `Something's not good, also I'm on bottom`,
+          position: "is-bottom",
+          type: "is-danger"
+        });
       }
     },
     beforeMount() {
