@@ -119,7 +119,12 @@
 
 <style scoped>
 
- 
+  .columns {
+    background-image:url('http://mtmt.viviansarazin.com/images/couple.jpeg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+  }
 
   .box {
     padding-top: 5vh;

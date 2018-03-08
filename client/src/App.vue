@@ -9,13 +9,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('http://fonts.googleapis.com/icon?family=Material+Icons');
 
- .columns {
-    background-image:url('http://mtmt.viviansarazin.com/images/couple.jpeg');
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-  }
-
 #app {
   font-family: 'Dosis', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

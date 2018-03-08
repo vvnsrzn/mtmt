@@ -69,6 +69,13 @@ import api from '../api';
   margin: 0 auto
 }
 
+ .columns {
+    background-image:url('http://mtmt.viviansarazin.com/images/couple.jpeg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+  }
+
 .columns {
   height: 105vh
 }

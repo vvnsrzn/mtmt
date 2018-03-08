@@ -1,6 +1,6 @@
 <template>
-<div>
-    <div class="container">
+<div class="columns">
+    <div class="column is-one-third">
         <img src="https://lh3.googleusercontent.com/D_04_AQH-II9TyLU26GDtFxPZohYWbl-SGKb1msbi5XlIGMAEr0HI01RvZ7Afi5BzQ=w300">
         <h2 class="title is-3">Quel est ton groupe préféré ?</h2>
         <form>
@@ -8,7 +8,7 @@
             <b-field>
                 <b-input placeholder="Search..." v-model="search" type="search" icon="magnify">
                 </b-input>
-                <button class="button hidden" @click.prevent="getMusic">Submit</button>
+                <button class="button hidden" @click.prevent="getMusic">Chercher</button>
             </b-field>
             <b-field>
                 <b-input placeholder="Un indice peut être ?" v-model="hint" type="text">
@@ -19,7 +19,7 @@
     </div>
     <div class="container">
     <div class="columns is-multiline">
-      <div class="column is-one-quarter" v-for="artist in artists">
+      <div class="column is-one-quarter" v-for="(artist, key) in artists" :key="key">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -95,5 +95,10 @@ import api from '../api';
   box {
     margin: 0 auto
   }
-  
+  .columns {
+    background-image:url('http://mtmt.viviansarazin.com/images/couple.jpeg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+  }
 </style>
