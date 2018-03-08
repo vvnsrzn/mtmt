@@ -62,19 +62,19 @@ import api from '../api';
 
 <style scoped>
 .small {
-  font-size: 12px
+  font-size: 12px !important
 }
 
 .box {
-  margin: 0 auto
+  margin: 0 auto;
 }
 
- .columns {
-    background-image:url('http://mtmt.viviansarazin.com/images/couple.jpeg');
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-  }
+.columns {
+  background-image:url('http://mtmt.viviansarazin.com/images/couple.jpeg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
 
 .columns {
   height: 105vh

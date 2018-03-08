@@ -9,7 +9,7 @@
             <b-field>
                 <b-input placeholder="Search..." v-model="search" rounded type="search" icon="magnify">
                 </b-input>
-                <button class="button hidden" @click.prevent="getMusic">Chercher</button>
+                <button class="button hidden is-danger" @click.prevent="getMusic">Chercher</button>
             </b-field>
             <b-field>
                 <b-input placeholder="Un indice peut être ?" v-model="hint" v-show="artists" rounded type="text">

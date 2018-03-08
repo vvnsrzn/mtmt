@@ -8,8 +8,10 @@ import QuizzMusic from './views/QuizzMusic.vue'
 import QuizzMovie from './views/QuizzMovie.vue'
 import QuizzTraits from './views/QuizzTraits.vue'
 import Swiper from './views/Swiper.vue'
+import Buefy from 'buefy'
 
 Vue.use(Router)
+Vue.use(Buefy)
 
 export default new Router({
   mode: 'history',

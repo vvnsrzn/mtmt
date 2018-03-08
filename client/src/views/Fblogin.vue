@@ -11,15 +11,16 @@
     <br />
     <form @submit.prevent="(e) => {uploadPicture(e)}">
     <b-upload v-model="files">
-            <a class="button is-primary">
-                <b-icon icon="upload"></b-icon>
-                <span>Choisir une photo</span>
-            </a>
+      <a class="button is-primary">
+          <i class="material-icons">camera</i>
+          <span>Choisir une photo</span>
+      </a>
     </b-upload>
         <div v-if="files && files.length">
-          <img src="http://mtmt.viviansarazin.com/images/welcome.gif" />
+          <img src="http://mtmt.viviansarazin.com/images/welcome.gif"/>
         </div>
-        <button class="button is-primary" v-if="files && files.length">Valider</button>
+        <button class="button is-primary" v-if="files && files.length">
+          <i class="material-icons">check</i>Valider</button>
         </form>
         </div>
   </div>

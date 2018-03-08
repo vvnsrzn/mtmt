@@ -24,10 +24,18 @@
       </div>
       <footer class="card-footer">
         <a href="#" class="card-footer-item">
-          <button v-on:click.prevent="dislike" class="button is-black">Dislike</button>        
+          <button 
+            v-on:click.prevent="dislike"
+            class="button is-danger">
+            <i class="material-icons">rowing</i>
+            Prochain.e</button>        
         </a>
         <a href="#" class="card-footer-item">
-          <button v-on:click.prevent="like" class="button is-primary">Like</button>
+          <button 
+            v-on:click.prevent="like" 
+            class="button is-primary">
+            <i class="material-icons">open_in_new</i>
+            Ouvrir le Quizz</button>
         </a>
       </footer>
 
@@ -35,7 +43,6 @@
 </template>
 
 <script>
-
   export default {
     name: "Card",
     data() {
@@ -54,7 +61,7 @@
       },
       dislike: function() {
         this.$emit("dislike");
-      },
+      }
     }
   };
 </script>

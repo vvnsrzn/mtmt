@@ -1,48 +1,35 @@
 <template>
-<div class="columns">
-  <div class="column is-one-quarter chat">
-    Messagerie
-  </div>
-  <div class="column">
-    <div>
-      <!-- <div v-if="result === 'BRAVO'">
-        <button class="button is-medium is-success">
-          Tu es trop fort.e pour être réel !
-        </button>
-      </div>
-      <div v-else-if="result === 'NOPE'">
-        <button class="button is-medium is-danger" @click="danger">
-          T'es nul.le
-        </button>
-      </div> -->
+  <div class="columns">
+    <div class="column is-one-quarter chat">
+      Messagerie
     </div>
-
-    <Card 
-      @like="getQuizz"
-      v-if="users.length"
-      @dislike="increment"
-      :firstName="users[this.counter].firstName"
-      :photo="users[this.counter].photos[0]"
-      :age="users[this.counter].age"
-      :work="users[this.counter].work"
-      :bio="users[this.counter].bio"      
-    />
-  </div>
     <div class="column">
-    <Quizz
-      @hide="isQuizzActive = false"
-      @post="postQuizz"
-      v-if="isQuizzActive"
-      :music="this.quizz[0].music.answer"
-      :movie="this.quizz[0].movie.answer"
-      :quality="this.quizz[0].traits.quality.answer"
-      :defect="this.quizz[0].traits.defect.answer"
-      :brmusic="this.quizz[0].music.badResponses"
-      :brmovie="this.quizz[0].movie.badResponses"
-      :brquality="this.quizz[0].traits.quality.badResponses"
-      :brdefect="this.quizz[0].traits.defect.badResponses"
-      :treshold="this.quizz[0].treshold"
-    />
+      <Card 
+        @like="getQuizz"
+        v-if="users.length"
+        @dislike="increment"
+        :firstName="users[this.counter].firstName"
+        :photo="users[this.counter].photos[0]"
+        :age="users[this.counter].age"
+        :work="users[this.counter].work"
+        :bio="users[this.counter].bio"      
+      />
+    </div>
+    <div class="column">
+      <Quizz
+        @hide="isQuizzActive = false"
+        @post="postQuizz"
+        v-if="isQuizzActive"
+        :music="this.quizz[0].music.answer"
+        :movie="this.quizz[0].movie.answer"
+        :quality="this.quizz[0].traits.quality.answer"
+        :defect="this.quizz[0].traits.defect.answer"
+        :brmusic="this.quizz[0].music.badResponses"
+        :brmovie="this.quizz[0].movie.badResponses"
+        :brquality="this.quizz[0].traits.quality.badResponses"
+        :brdefect="this.quizz[0].traits.defect.badResponses"
+        :treshold="this.quizz[0].treshold"
+      />
     </div>
   </div>
 </template>
