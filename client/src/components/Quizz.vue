@@ -8,22 +8,22 @@
     <b-field>
       <b-radio-button v-model="radioButtonMusic"
         native-value="A"
-        type="is-danger">
+        type="is-dark">
         <span>{{music}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMusic"
           native-value="B"
-          type="is-success">
+          type="is-dark">
           <span>B</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMusic"
           native-value="C"
-          type="is-danger">
+          type="is-dark">
           <span>C</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMusic"
           native-value="D"
-          type="is-success">
+          type="is-dark">
           <span>D</span>
       </b-radio-button>
      </b-field>
@@ -32,22 +32,22 @@
     <b-field>
       <b-radio-button v-model="radioButtonMovie"
         native-value="A"
-        type="is-danger">
+        type="is-dark">
         <span>A</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMovie"
           native-value="B"
-          type="is-success">
+          type="is-dark">
           <span>{{movie}}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMovie"
           native-value="C"
-          type="is-danger">
+          type="is-dark">
           <span>C</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonMovie"
           native-value="D"
-          type="is-success">
+          type="is-dark">
           <span>D</span>
       </b-radio-button>
      </b-field>
@@ -56,22 +56,22 @@
     <b-field>
       <b-radio-button v-model="radioButtonQuality"
         native-value="A"
-        type="is-danger">
+        type="is-dark">
         <span>A</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonQuality"
           native-value="B"
-          type="is-success">
+          type="is-dark">
           <span>B</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonQuality"
           native-value="C"
-          type="is-danger">
+          type="is-dark">
           <span>{{ quality }}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonQuality"
           native-value="D"
-          type="is-success">
+          type="is-dark">
           <span>D</span>
       </b-radio-button>
      </b-field>
@@ -80,22 +80,22 @@
     <b-field>
       <b-radio-button v-model="radioButtonDefect"
         native-value="A"
-        type="is-danger">
+        type="is-dark">
         <span>{{ defect }}</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonDefect"
           native-value="B"
-          type="is-success">
+          type="is-dark">
           <span>B</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonDefect"
           native-value="C"
-          type="is-danger">
+          type="is-dark">
           <span>C</span>
       </b-radio-button>
       <b-radio-button v-model="radioButtonDefect"
           native-value="D"
-          type="is-success">
+          type="is-dark">
           <span>D</span>
       </b-radio-button>
      </b-field>
