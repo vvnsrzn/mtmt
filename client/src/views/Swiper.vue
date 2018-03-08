@@ -3,97 +3,131 @@
   <div class="column is-one-quarter chat">
     Messagerie
   </div>
-  <div class="column swiper">
-    <Card @next="increment"
+  <div class="column">
+    <Card 
+      @like="getQuizz"
+      @dislike="increment"
       :firstName="users[this.counter].firstName"
       :photo="users[this.counter].photos[0]"
       :age="users[this.counter].age"
       :work="users[this.counter].work"
       :bio="users[this.counter].bio"
     />
-  <button class="button" @click.prevent="getMatches" >TEST</button>
   </div>
-</div>
+    <div class="column">
+    <Quizz
+      @hide="isQuizzActive = false"
+      v-if="isQuizzActive"
+      :music="music.answer"
+    />
+    </div>
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Card from '@/components/Card.vue'
-import api from '../api'
+  // @ is an alias to /src
+  import Card from "@/components/Card.vue";
+  import Quizz from "@/components/Quizz.vue";
 
-export default {
-  name: 'Swiper',
-  props: ['id', 'firstName', 'photo', 'age', 'work', 'bio', 'msg'],
-  components: {
-    Card,
-  },
-  data () {
-    return {
-      user: {
-        photos: [],
-        age: '',
-        firstName: '',
-        work: '',
-        bio: '',
-      },
-      quizz: {
+  import api from "../api";
 
-      },
-      users: {
-        photos: [],
-        age: '',
-        firstName: '',
-        work: '',
-        bio: ''
-      },
-      counter: 0
-    }
-  },
-  methods: {
-    getMatches() {
-      api
-        .getMatches(localStorage.getItem("id"))
-        .then((users) => {
-          this.users = users
-        })
-        .catch(err => {
-          this.error = err;
-        })
+  export default {
+    name: "Swiper",
+    props: ["id", "firstName", "photo", "age", "work", "bio", "msg"],
+    components: {
+      Card,
+      Quizz
     },
-    getQuizz() {
-      api
-      .getQuizz(id)
-      .then((quizz) => {
-        this.quizz = quizz
-      })
-      .catch(err => {
-        this.error = err;
-      })
+    data() {
+      return {
+        music: {
+          answer: "",
+          badResponses: []
+        },
+        movie: {
+          answer: "",
+          badResponses: []
+        },
+        traits: {
+          quality: {
+            answer: "",
+            badResponses: []
+          },
+          defect: {
+            answer: "",
+            badResponses: []
+          }
+        },
+        // user: {
+        //   photos: [],
+        //   age: "",
+        //   firstName: "",
+        //   work: "",
+        //   bio: ""
+        // },
+        quizz: {},
+        users: {
+          photos: [],
+          age: 0,
+          firstName: "",
+          work: "",
+          bio: ""
+        },
+        isQuizzActive: false,
+        counter: 0
+      };
     },
-    increment(){
-      this.counter++;
+    methods: {
+      yo: function() {
+        console.log('yo')
+      },
+      hideQuizz: function() {
+        this.isQuizzActive = false;
+      },
+      getMatches() {
+        api
+          .getMatches(localStorage.getItem("id"))
+          .then(users => {
+            this.users = users;
+          })
+          .catch(err => {
+            this.error = err;
+          });
+      },
+      getQuizz() {
+        this.isQuizzActive = true;
+        api
+          .getQuizz(this.users.id)
+          .then(quizz => {
+            console.log("front");
+            this.quizz = quizz;
+          })
+          .catch(err => {
+            this.error = err;
+          });
+      },
+      increment() {
+        this.counter++;
+      }
+    },
+    beforeMount() {
+      this.getMatches();
     }
-  },
-  beforeMount() {
-    this.getMatches()
-  },
-}
+  };
 </script>
 <style>
-
   .img {
     margin: 10px;
     width: 20vw;
-    margin: 0 auto
+    margin: 0 auto;
   }
 
   p {
-    font-size: 0.6rem
+    font-size: 0.6rem;
   }
 
   .chat {
     background-color: #ccc;
-    height: 100vh
+    height: 100vh;
   }
-
 </style>

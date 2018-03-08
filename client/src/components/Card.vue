@@ -1,6 +1,5 @@
 <template>
-<div class="columns">
-  <div class="column">
+
     <div class="card swiper p1">
       <header class="card-header">
         <p class="title">
@@ -31,61 +30,43 @@
           <button v-on:click.prevent="like" class="button is-primary">Like</button>
         </a>
       </footer>
-    </div>
-  </div>
-    <div v-if="isQuizzActive">
-    <Quizz @hide="hideQuizz" />
-  </div>
+
 </div>
 </template>
 
 <script>
 
-import Quizz from '@/components/Quizz.vue'
-
-
-export default {
-  name: 'Card',
-  components: {
-    Quizz
-  },
-  data () {
-    return {
-      isQuizzActive: false    
+  export default {
+    name: "Card",
+    data() {
+      return {};
+    },
+    props: {
+      firstName: String,
+      photo: String,
+      age: Number,
+      work: String,
+      bio: String
+    },
+    methods: {
+      like: function() {
+        this.$emit("like");
+      },
+      dislike: function() {
+        this.$emit("dislike");
+      },
     }
-  },
-  props: {
-    firstName: String,
-    photo: String,
-    age: String,
-    work: String,
-    bio: String,
-  },
-  methods: {
-    like: function () {
-      this.isQuizzActive = true
-    },
-
-    hideQuizz: function () {
-      this.isQuizzActive = false
-    },
-
-    dislike: function () {
-      this.$emit('next');
-      this.isQuizzActive = false
-    },
-  }
-}
+  };
 </script>
 
 <style scoped>
   .details {
-    font-size: 14px
+    font-size: 14px;
   }
   .box {
-    margin: 0 auto
+    margin: 0 auto;
   }
   .swiper {
-    width: 50vh
+    width: 50vh;
   }
 </style>

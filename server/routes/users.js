@@ -46,8 +46,6 @@ router.get("/api/getmatches/:id", function(req, res, next) {
 
 //////////////////////////////////////////////
 
-//////////////////////////////////////////////
-
 router.get("/api/getquizz/:id", function(req, res, next) {
   console.log(req.params.id)
     Quizz.find({

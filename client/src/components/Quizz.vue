@@ -3,6 +3,9 @@
     <button class="button is-pulled-right" @click="hide"><i class="material-icons">highlight_off</i></button>    
     <br />
     <h1 class="title">À ton avis...</h1>
+
+    {{music}}
+
     <p class="question">Quel est son groupe préféré ?</p>
     <form>
     <b-field>
@@ -109,35 +112,31 @@
 
 <script>
   export default {
-    name: 'Quizz',
+    name: "Quizz",
+    props: ["music", "movie", "traits"],
     data() {
       return {
-        isQuizzActive: false,
-        radioButtonMusic: '',
-        radioButtonMovie: '',
-        radioButtonQuality: '',
-        radioButtonDefect: '',
-        }
-      },
-    props: {
-      isQuizzActive: Boolean,    
-      msg: String
+        radioButtonMusic: "",
+        radioButtonMovie: "",
+        radioButtonQuality: "",
+        radioButtonDefect: ""
+      };
     },
     methods: {
-        hide() {
-        this.$emit('hide')
-      }
+      hide() {
+        this.$emit("hide");
+      },
     }
-  }
+  };
 </script>
 
 <style>
   .quizz {
     margin: 0 auto;
     width: 20vw;
-    text-align: center
+    text-align: center;
   }
   .question {
-    font-size: 14px
+    font-size: 14px;
   }
 </style>
