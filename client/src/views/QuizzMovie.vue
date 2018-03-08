@@ -19,7 +19,7 @@
     </div>
     <div class="container">
     <div class="columns is-multiline">
-      <div class="column is-one-quarter" v-for="movie in movies">
+      <div class="column is-one-quarter" v-for="(movie, key) in movies" :key="key">
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -39,55 +39,58 @@
 
 
 <script>
-import api from '../api';
+  import api from "../api";
 
   export default {
-    data () {
+    data() {
       return {
         search: "",
         hint: "",
         movies: [],
-        movie: "",
-      }
+        movie: ""
+      };
     },
     methods: {
       getMovie() {
         api
-        .getMovie(this.search)
-        .then((movies) => {
-          this.movies = movies.results,
-          console.log(this.movies)
-        })
-        .catch(err => {
-          this.error = err;
-        });
+          .getMovie(this.search)
+          .then(movies => {
+            (this.movies = movies.results), console.log(this.movies);
+          })
+          .catch(err => {
+            this.error = err;
+          });
       },
 
       sendMovie(movie) {
         api
-        .sendMovie({
-          userId: localStorage.getItem('id'),
-          movie: movie,
-          hint: this.hint
-        })
-        .then((data) => {
-          console.log(data)
-          this.$router.push('/quizz-traits');
+          .sendMovie({
+            userId: localStorage.getItem("id"),
+            movie: movie,
+            hint: this.hint
+          })
+          .then(data => {
+            this.$toast.open({
+              message: `All right!`,
+              type: "is-success"
+            });
+            this.$router.push("/quizz-traits");
           })
           .catch(err => {
-          this.error = err;
-        });
+            this.error = err;
+          });
       }
     }
-}
+  };
 </script>
 
 <style scoped>
   img {
     margin-top: 12px;
-    width: 90px
-  },
+    width: 90px;
+  }
+  ,
   box {
-    margin: 0 auto
+    margin: 0 auto;
   }
 </style>

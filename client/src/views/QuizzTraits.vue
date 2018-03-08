@@ -47,71 +47,79 @@
 </template>
 
 <script>
-import quality from '../quality';
-import defect from '../defect';
-import api from '../api';
+    import quality from "../quality";
+    import defect from "../defect";
+    import api from "../api";
 
     export default {
-        data() {
-            return {
-                name: '',
-                name2: '',            
-                quality: quality,
-                qualityHint: '',
-                qualitySelected: null,
-                defect: defect,
-                defectHint: '',
-                defectSelected: null,
-            }
-        },
-        methods: {
-            sendTraits() {
-                api
-                .sendTraits({
-                    userId: localStorage.getItem('id'),
-                    traits: {
-                        quality: {
-                            answer: this.name,
-                            hint: this.qualityHint    
-                    },
-                        defect: {
-                            answer: this.name2,
-                            hint: this.defectHint
-                        }
-                    }
-                })
-                .then((data) => {
-                    this.$router.push('/swiper');
-                    })
-                    .catch(err => {
-                    this.error = err;
-                    });
-            }
-        },
-        computed: {
-            filteredDataArrayQuality() {
-                return this.quality.filter((option) => {
-                    return option
-                        .toString()
-                        .toLowerCase()
-                        .indexOf(this.name.toLowerCase()) >= 0
-                })
-            },
-            filteredDataArrayDefect() {
-                return this.defect.filter((option) => {
-                    return option
-                        .toString()
-                        .toLowerCase()
-                        .indexOf(this.name2.toLowerCase()) >= 0
-                })
-            }
+      data() {
+        return {
+          name: "",
+          name2: "",
+          quality: quality,
+          qualityHint: "",
+          qualitySelected: null,
+          defect: defect,
+          defectHint: "",
+          defectSelected: null
+        };
+      },
+      methods: {
+        sendTraits() {
+          api
+            .sendTraits({
+              userId: localStorage.getItem("id"),
+              traits: {
+                quality: {
+                  answer: this.name,
+                  hint: this.qualityHint
+                },
+                defect: {
+                  answer: this.name2,
+                  hint: this.defectHint
+                }
+              }
+            })
+            .then(data => {
+              this.$toast.open({
+                message: `C'est parti!`,
+                type: "is-success"
+              });
+              this.$router.push("/swiper");
+            })
+            .catch(err => {
+              this.error = err;
+            });
         }
-    }
+      },
+      computed: {
+        filteredDataArrayQuality() {
+          return this.quality.filter(option => {
+            return (
+              option
+                .toString()
+                .toLowerCase()
+                .indexOf(this.name.toLowerCase()) >= 0
+            );
+          });
+        },
+        filteredDataArrayDefect() {
+          return this.defect.filter(option => {
+            return (
+              option
+                .toString()
+                .toLowerCase()
+                .indexOf(this.name2.toLowerCase()) >= 0
+            );
+          });
+        }
+      }
+    };
 </script>
 
 <style>
-  img {
-    margin-top: 12px;
-    width: 90px
-  }
+    img {
+      margin-top: 12px;
+      width: 90px;
+    }
 </style>

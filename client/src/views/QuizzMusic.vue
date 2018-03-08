@@ -72,7 +72,10 @@ import api from '../api';
           hint: this.hint
         })
         .then((data) => {
-          console.log(data)
+          this.$toast.open({
+              message: `Je kiffe ${this.artist}`,
+              type: "is-success"
+            });
           this.$router.push('/quizz-movie');
           })
           .catch(err => {

@@ -130,10 +130,9 @@
           })
           .then(result => {
             this.result = result.message;
-            if(result.message === 'BRAVO') {
+            if (result.message === "BRAVO") {
               this.success();
-            }
-            else {
+            } else {
               this.danger();
             }
             this.increment();
@@ -158,11 +157,9 @@
         this.$toast.open({
           duration: 5000,
           message: `Dommage... Essaye encore !`,
-          position: "is-bottom",
           type: "is-danger"
         });
       }
-
     },
     beforeMount() {
       this.getMatches();

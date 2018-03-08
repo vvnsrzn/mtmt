@@ -46,6 +46,10 @@ import api from '../api';
           treshold: this.treshold
         })
         .then((treshold) => {
+          this.$toast.open({
+              message: "C'est noté",
+              type: "is-success"
+            });
           this.$router.push('/quizz-music');          
         })
         .catch(err => {

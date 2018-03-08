@@ -72,29 +72,29 @@
 </template>
 
 <script>
-import api from '../api';
+  import api from "../api";
   export default {
-    name: 'lookingforrange',
-    data () {
+    name: "lookingforrange",
+    data() {
       return {
-        gender: 'male',
+        gender: "male",
         lookingForRange: {
           min: 26,
           max: 38
         },
-        lookingForGender: 'male',
+        lookingForGender: "male",
         age: 24,
-        bio: '',
-        id: ''      
-      }
+        bio: "",
+        id: ""
+      };
     },
     methods: {
-    setLookingFor () {
+      setLookingFor() {
         api
           .setLookingFor({
-            id: localStorage.getItem('id'),
+            id: localStorage.getItem("id"),
             gender: this.gender,
-            lookingForRange:  {
+            lookingForRange: {
               min: this.lookingForRange[0],
               max: this.lookingForRange[1]
             },
@@ -102,27 +102,28 @@ import api from '../api';
             lookingForGender: this.lookingForGender,
             bio: this.bio
           })
-          .then((data) => {
-          this.$router.push('/quizz-info');
+          .then(data => {
+            this.$toast.open({
+              message: "Bien reçu",
+              type: "is-success"
+            });
+            this.$router.push("/quizz-info");
           })
           .catch(err => {
-          this.error = err;
-        });
+            this.error = err;
+          });
       }
     }
-
-  }
+  };
 </script>
 
 <style scoped>
+  .field.has-addons {
+    justify-content: center;
+    margin: 10px;
+  }
 
-.field.has-addons {
-  justify-content: center;
-  margin: 10px
-}
-
-.subtitle {
-  margin: 36px
-}
-
+  .subtitle {
+    margin: 36px;
+  }
 </style>
