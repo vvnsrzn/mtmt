@@ -4,6 +4,14 @@
       <form @submit.prevent="setLookingFor">
         <h1 class="title is-3">Mais qui es-tu ?</h1>
         <br />
+        <p>Ton numéro de téléphone</p>
+        <b-field label="">
+          <b-input 
+          v-model="phone"
+          required
+          placeholder="118 218"
+          ></b-input>
+        </b-field>
         <p>Je suis un.e</p>
           <b-field>
             <b-radio-button 
@@ -91,7 +99,8 @@
         lookingForGender: "male",
         age: 24,
         bio: "",
-        id: ""
+        id: "",
+        phone: ""
       };
     },
     methods: {
@@ -100,6 +109,7 @@
           .setLookingFor({
             id: localStorage.getItem("id"),
             gender: this.gender,
+            phone: this.phone,
             lookingForRange: {
               min: this.lookingForRange[0],
               max: this.lookingForRange[1]

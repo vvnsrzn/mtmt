@@ -9,25 +9,25 @@
         required
         native-value="A"
         type="is-success">
-        <span>{{music}}</span>
+         <p class="answers">{{music}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserMusic"
         required
           native-value="B"
           type="is-success">
-          <span>{{brmusic[0]}}</span>
+           <p class="answers">{{brmusic[0]}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserMusic"
         required
           native-value="C"
           type="is-success">
-          <span>{{brmusic[1]}}</span>
+           <p class="answers">{{brmusic[1]}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserMusic"
         required
           native-value="D"
           type="is-success">
-          <span>{{brmusic[2]}}</span>
+           <p class="answers">{{brmusic[2]}}</p>
       </b-radio-button>
      </b-field>
 
@@ -36,22 +36,22 @@
       <b-radio-button v-model="answerUserMovie"
         native-value="A"
         type="is-success">
-        <span>{{brmovie[0]}}</span>
+         <p class="answers">{{brmovie[0]}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserMovie"
           native-value="B"
           type="is-success">
-          <span>{{movie}}</span>
+           <p class="answers">{{movie}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserMovie"
           native-value="C"
           type="is-success">
-          <span>{{brmovie[1]}}</span>
+           <p class="answers">{{brmovie[1]}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserMovie"
           native-value="D"
           type="is-success">
-          <span>{{brmovie[2]}}</span>
+           <p class="answers">{{brmovie[2]}}</p>
       </b-radio-button>
      </b-field>
 
@@ -60,22 +60,22 @@
       <b-radio-button v-model="answerUserQuality"
         native-value="A"
         type="is-success">
-        <span>{{brquality[0]}}</span>
+         <p class="answers">{{brquality[0]}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserQuality"
           native-value="B"
           type="is-success">
-          <span>{{brquality[1]}}</span>
+           <p class="answers">{{brquality[1]}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserQuality"
           native-value="C"
           type="is-success">
-          <span>{{ quality }}</span>
+           <p class="answers">{{ quality }}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserQuality"
           native-value="D"
           type="is-success">
-          <span>{{brquality[2]}}</span>
+           <p class="answers">{{brquality[2]}}</p>
       </b-radio-button>
      </b-field>
 
@@ -84,28 +84,29 @@
       <b-radio-button v-model="answerUserDefect"
         native-value="A"
         type="is-success">
-        <span>{{ defect }}</span>
+         <p class="answers">{{ defect }}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserDefect"
           native-value="B"
           type="is-success">
-          <span>{{brdefect[0]}}</span>
+          <p class="answers" >{{brdefect[0]}}</p >
       </b-radio-button>
       <b-radio-button v-model="answerUserDefect"
           native-value="C"
           type="is-success">
-          <span>{{brdefect[1]}}</span>
+           <p class="answers">{{brdefect[1]}}</p>
       </b-radio-button>
       <b-radio-button v-model="answerUserDefect"
           native-value="D"
           type="is-success">
-          <span>{{brdefect[2]}}</span>
+           <p class="answers">{{brdefect[2]}}</p>
       </b-radio-button>
      </b-field>
      <div>
-        <p>{{ treshold }}% de bonnes réponses requis</p>
+         <b class="answers">{{ treshold }}% de bonnes réponses requis</b>
+         <br />
         <button 
-          @click="hide"
+          @click.prevent="hide"
           class="button is-danger">
           <i class="material-icons">highlight_off</i>Euh... en fait non!
         </button>    
@@ -165,6 +166,9 @@
     text-align: center;
   }
   .question {
-    font-size: 14px;
+    font-size: 1.6rem
+  }
+  .answers {
+    font-size: 1.4rem;
   }
 </style>

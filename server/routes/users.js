@@ -56,7 +56,7 @@ router.get("/api/getcandidates/:id", function(req, res, next) {
     })
         .populate({
             path: "_userCandidate",
-            select: "firstName photos age"
+            select: "firstName photos age phone"
         })
         .exec(function(err, candidates) {
             if (err) {
@@ -124,7 +124,7 @@ router.post("/profile", upload.single("photo"), function(req, res, next) {
     User.findByIdAndUpdate(
         req.user._id,
         {
-            photos: "/uploads/" + req.file.filename
+            photos: "/uploads/" + req.file.filename,
         },
         (err, user) => {
             if (err) {
@@ -136,12 +136,15 @@ router.post("/profile", upload.single("photo"), function(req, res, next) {
     );
 });
 
+//////////////////////////////////////////////
+
 router.post("/api/lookingfor", function(req, res, next) {
     const { id, gender, lookingForRange, lookingForGender } = req.body;
 
     User.findByIdAndUpdate(
         id,
         {
+            phone: req.body.phone,
             gender: req.body.gender,
             lookingForRange: {
                 min: req.body.lookingForRange.min,

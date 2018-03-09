@@ -2,8 +2,8 @@
 
     <div class="card swiper p1">
       <header class="card-header">
-        <p class="title">
-          {{firstName}}
+        <p class="firstName">
+           {{firstName}}
         </p>
         <a href="#" class="card-header-icon" aria-label="more options">
           <span class="icon">
@@ -11,7 +11,7 @@
           </span>
         </a>
       </header>
-      <div class="box image is-128x128">
+      <div class="image is-1by1">
         <img :src="photo" class="top"/>
       </div>
       <div class="card-content">
@@ -67,13 +67,21 @@
 </script>
 
 <style scoped>
+  .firstName {
+    font-size: 4rem;
+    padding-left: 10px
+  }
+
   .details {
-    font-size: 14px;
+    font-size: 1.6rem;
   }
   .box {
     margin: 0 auto;
+    margin-right: 5vw
   }
   .swiper {
-    width: 50vh;
+    width: 45vh;
+    margin: 0 auto
   }
+
 </style>

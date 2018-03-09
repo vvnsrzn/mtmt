@@ -1,6 +1,7 @@
 <template>
   <div class="columns is-vcentered">
     <div class="column is-one-quarter chat">
+      <h1 class="title">Ton profil</h1>
       <h1 class="title">Messagerie</h1>
       <div v-if="!candidates">
         <p>Apparaîtront ici tes matches</p>
@@ -13,8 +14,9 @@
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-4">{{candidate._userCandidate.firstName}}</p>
+          <p class="title is-4">{{candidate._userCandidate.firstName}}  {{candidate._userCandidate.phone}}</p>
           <p class="subtitle is-6">{{candidate._userCandidate.age}} ans</p>
+          
         </div>
       </div>
     </div>
@@ -30,10 +32,10 @@
         :bio="users[this.counter].bio"      
       />
     </div>
-    <div class="column is-one-third">
+    <div class="box">
       <span v-if="this.counter === 0">
-        <h2 class="subtitle">Comment ça marche?</h2>
-        <p>Clicque sur "Ouvrir le Quizz" pour tenter ta chance!</p>
+        <h2 class="title">Comment ça marche?</h2>
+        <p class="details">Clicque sur "Ouvrir le Quizz" pour tenter ta chance avec {{users[this.counter].firstName}} !</p>
         <img src="https://media.giphy.com/media/ToMjGpKniGqRNLGBrhu/giphy.gif" alt="">
       </span>
       <span v-if="this.counter === 5">
@@ -195,9 +197,18 @@
   };
 </script>
 <style>
+
+  .colunms {
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%) !important;
+  }
+
+  .details {
+    font-size: 1.6rem;
+  }
+
   .img {
-    margin: 10px;
-    width: 20vw;
+    /* margin: 10px; */
+    width: 20vw !important;
     margin: 0 auto;
   }
 
@@ -208,5 +219,9 @@
   .chat {
     background-color: #f1896f;
     height: 105vh;
+  }
+
+  .media {
+    margin-left: 2vw
   }
 </style>

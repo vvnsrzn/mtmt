@@ -37,6 +37,7 @@ export default {
     uploadPicture(obj) {
         const formData = new FormData();
         Object.keys(obj).forEach(key => formData.append(key, obj[key]));
+        console.log(formData)
         return mtmt
             .post(`/upload`, formData, {
                 headers: {
