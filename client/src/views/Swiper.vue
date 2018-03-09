@@ -1,8 +1,7 @@
 <template>
   <div class="columns is-vcentered">
     <div class="column is-one-quarter chat">
-      <h1 class="title">Ton profil</h1>
-      <h1 class="title">Messagerie</h1>
+      <h1 class="title">Contacts</h1>
       <div v-if="!candidates">
         <p>Apparaîtront ici tes matches</p>
         <p>Si tu en trouves du reste...</p>

@@ -134,9 +134,8 @@
 </script>
 
 <style scoped>
-
   .columns {
-    background-image:url('http://mtmt.viviansarazin.com/images/couple.jpeg');
+    background-image: url("http://mtmt.viviansarazin.com/images/couple.jpeg");
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
@@ -148,7 +147,7 @@
     margin: 0 auto;
     margin-top: 5vh !important;
     background-color: white;
-    border-radius: 5px
+    border-radius: 5px;
   }
 
   .field.has-addons {
@@ -160,4 +159,7 @@
     margin: 36px;
   }
 
+  p {
+    font-size: 1.8rem !important;
+  }
 </style>

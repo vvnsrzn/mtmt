@@ -39,7 +39,7 @@
         photos: "",
         id: this.$route.query.id,
         firstName: this.$route.query.firstName,
-        phone: "",
+        phone: ""
       };
     },
     methods: {
@@ -47,7 +47,7 @@
         api
           .uploadPicture({
             _id: this.id,
-            photos: this.files[0],
+            photos: this.files[0]
           })
           .then(data => {
             this.$router.push(`/lookingfor/`);
@@ -78,8 +78,10 @@
 
   .phone {
     width: 10vw;
-    text-align: center;    
+    text-align: center;
   }
 
-
+  p {
+    font-size: 1.8rem !important;
+  }
 </style>
