@@ -1,12 +1,22 @@
 <template>
-  <div class="columns  is-vcentered">
+  <div class="columns is-vcentered">
     <div class="column is-one-quarter chat">
-      <h1>À toi de jouer</h1>
-      <ul>
-        <li v-for="(candidate, key) in candidates" :key="key">
-          <p>{{candidate._userCandidate.firstName}}</p>
-        </li>
-      </ul>
+      <h1 class="title">Messagerie</h1>
+      <div v-if="!candidates">
+        <p>Apparaîtront ici tes matches</p>
+        <p>Si tu en trouves du reste...</p>
+      </div>
+      <div class="media" v-for="(candidate, key) in candidates" :key="key">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img :src="candidate._userCandidate.photos[0]" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">{{candidate._userCandidate.firstName}}</p>
+          <p class="subtitle is-6">{{candidate._userCandidate.age}} ans</p>
+        </div>
+      </div>
     </div>
     <div class="column is-one-half">
       <Card 
@@ -148,14 +158,14 @@
 
       getCandidates() {
         api
-        .getCandidates(localStorage.getItem("id"))
-        .then(candidates => {
-          console.log(candidates)
-          this.candidates = candidates
-        })
-        .catch(err => {
+          .getCandidates(localStorage.getItem("id"))
+          .then(candidates => {
+            console.log(candidates);
+            this.candidates = candidates;
+          })
+          .catch(err => {
             this.error = err;
-        })
+          });
       },
 
       increment() {
@@ -196,7 +206,7 @@
   }
 
   .chat {
-    background-color: #ccc;
-    height: 100vh;
+    background-color: #f1896f;
+    height: 105vh;
   }
 </style>
