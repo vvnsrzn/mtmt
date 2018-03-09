@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const matchSchema = new Schema(
     {
-        _id: {
+        _quizzId: {
             type: Schema.Types.ObjectId,
             ref: "Quizz"
         },
@@ -27,38 +27,38 @@ const matchSchema = new Schema(
             min: 0,
             max: 1
         },
-        musicAnswer: {
-            type: String,
-            required: true
-        },
-        musicSuccess: {
-            type: Boolean,
-            required: true
-        },
-        movieAnswer: {
-            type: String,
-            required: true
-        },
-        movieSuccess: {
-            type: Boolean,
-            required: true
-        },
-        qualityAnswer: {
-            type: String,
-            required: true
-        },
-        qualitySuccess: {
-            type: Boolean,
-            required: true
-        },
-        defectAnswer: {
-            type: String,
-            required: true
-        },
-        defectSuccess: {
-            type: Boolean,
-            required: true
-        }
+        // musicAnswer: {
+        //     type: String,
+        //     required: true
+        // },
+        // musicSuccess: {
+        //     type: Boolean,
+        //     required: true
+        // },
+        // movieAnswer: {
+        //     type: String,
+        //     required: true
+        // },
+        // movieSuccess: {
+        //     type: Boolean,
+        //     required: true
+        // },
+        // qualityAnswer: {
+        //     type: String,
+        //     required: true
+        // },
+        // qualitySuccess: {
+        //     type: Boolean,
+        //     required: true
+        // },
+        // defectAnswer: {
+        //     type: String,
+        //     required: true
+        // },
+        // defectSuccess: {
+        //     type: Boolean,
+        //     required: true
+        // }
     },
     {
         timestamps: true

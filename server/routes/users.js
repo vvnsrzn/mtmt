@@ -7,10 +7,13 @@ const upload = multer({
 });
 const User = require("../models/user");
 const Quizz = require("../models/quizz");
+const Match = require("../models/match");
+
 
 //////////////////////////////////////////////
 
 router.post("/api/postquizz/", function(req, res, next) {
+    console.log(req.body)
     Quizz.findById(req.body._id, function(err, quizz) {
         if (err) {
             next(err);
@@ -29,6 +32,12 @@ router.post("/api/postquizz/", function(req, res, next) {
                 score += 25;
             }
             if (score > quizz.treshold) {
+                Match.create({                    
+                    _quizzId: req.body._id,
+                    _userRequester: req.body._userRequester,
+                    _userCandidate: req.body._userCandidate,
+                    average: (score / 100),
+                })
                 res.json({
                     message: "BRAVO"
                 });
