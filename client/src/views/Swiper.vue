@@ -9,7 +9,7 @@
       <div class="media" v-for="(candidate, key) in candidates" :key="key">
         <div class="media-left">
           <figure class="image is-48x48">
-            <img :src="candidate._userCandidate.photos[0]" alt="Placeholder image">
+            <img :src="candidate._userCandidate.photos[0]" class="img-fix" alt="Placeholder image">
           </figure>
         </div>
         <div class="media-content">
@@ -197,17 +197,15 @@
 </script>
 <style>
 
-  .colunms {
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%) !important;
-  }
+
 
   .details {
     font-size: 1.6rem;
   }
 
-  .img {
+  .img-fix {
     /* margin: 10px; */
-    width: 20vw !important;
+    width: 100% !important;
     margin: 0 auto;
   }
 
