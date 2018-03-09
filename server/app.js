@@ -59,7 +59,7 @@ passport.use(
   new FacebookStrategy({
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: 'http://mtmt.herokuapp.com/api/auth/facebook/callback',
+      callbackURL: process.env.NODE_ENV === 'production' ? 'http://mtmt.herokuapp.com/api/auth/facebook/callback' : 'http://localhost:3000/api/auth/facebook/callback',
       profileFields: ['id', 'first_name', 'email'],
     },
     (accessToken, refreshToken, profile, cb) => {

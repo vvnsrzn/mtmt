@@ -1,5 +1,4 @@
 <template>
-
     <div class="card swiper p1">
       <header class="card-header">
         <p class="firstName">
