@@ -1,10 +1,10 @@
 <template>
-  <div class="columns">
+  <div class="columns hero is-fullheight">
     <div class="column is-one-third box">
       <form @submit.prevent="setLookingFor">
         <h1 class="title is-3">Mais qui es-tu ?</h1>
         <br />
-        <h3 class="subtitle is-3">Je suis un.e</h3>
+        <p>Je suis un.e</p>
           <b-field>
             <b-radio-button 
               v-model="gender"
@@ -19,14 +19,16 @@
                 <span>Femme</span>
             </b-radio-button>
           </b-field>
-        <p class="subtitle">J'ai {{ age }} ans</p>
+        <br />
+        <p>J'ai {{ age }} ans</p>
         <div class="">
           <el-slider v-model="age"
             :min="18"
             :max="50">
           </el-slider>
         </div>
-        <h3 class="subtitle is-3">Je recherche un.e</h3>
+        <br />        
+        <p>Je recherche un.e</p>
         <b-field>
           <b-radio-button 
             v-model="lookingForGender"
@@ -41,8 +43,10 @@
             <span>Femme</span>
           </b-radio-button>
         </b-field>
+        <br />
+        
         <div class="">
-        <p class="subtitle">Entre {{ lookingForRange[0] }} et {{ lookingForRange[1] }} printemps</p>
+        <p>Entre {{ lookingForRange[0] }} et {{ lookingForRange[1] }} printemps</p>
           <el-slider
             v-model="lookingForRange"
             range
@@ -51,8 +55,10 @@
             :max="50">
           </el-slider>
         </div>
+        <br />
+        
         <div class="">
-          <h3 class="subtitle is-3">Si tu devais te décrire en un tweet :</h3>
+          <p>Si tu devais te décrire en un tweet :</p>
             <b-field>
               <b-input maxlength="280" 
                 v-model="bio"
@@ -124,10 +130,11 @@
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
+    height: 102vh;
   }
 
   .box {
-    padding-top: 5vh;
+    padding: 5vh;
     margin: 0 auto;
     margin-top: 5vh !important;
     background-color: white;

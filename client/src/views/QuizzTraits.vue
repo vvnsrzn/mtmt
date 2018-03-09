@@ -125,7 +125,7 @@
   }
 
   .main {
-    background-image: url("http://mtmt.viviansarazin.com/images/couple.jpeg");
+    background-image: url("http://mtmt.viviansarazin.com/images/traits.jpeg");
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;

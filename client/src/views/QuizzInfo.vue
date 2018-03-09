@@ -1,12 +1,10 @@
 <template>
 <div class="columns is-vcentered">
   <div class="column box is-one-third">
-  <h1 class="title is-3">Quizz info</h1>
-  <p>C'est ici que tout se passe.</p>
-  <p>Comme tu le sais déjà, la force de cette application réside dans ce quizz.</p>
-  <p>C'est pour cela que nous te conseillons de le faire le plus sérieusement possible (ou pas).</p>
+  <h1 class="title is-3">Avant de remplir le Quizz...</h1>
+  <p>La force de cette application réside dans les questions qui vont suivre.</p>
+  <p>C'est pour cela que nous te conseillons de le faire sérieusement (ou pas).</p>
   <br />
-
   <p>Mais pour que tu gardes un contrôle sur la difficulté, nous te proposons que tu inscrives ton seuil de tolérance.</p>
   <br />
   <div class="">
@@ -62,11 +60,12 @@ import api from '../api';
 
 <style scoped>
 .small {
-  font-size: 12px !important
+  font-size: 1.3rem !important
 }
 
 .box {
   margin: 0 auto;
+  padding: 5vh
 }
 
 .columns {

@@ -10,8 +10,8 @@
     <p>Il faut maintenant que tu choissises une photo de profil</p>
     <br />
     <form @submit.prevent="(e) => {uploadPicture(e)}">
-    <b-upload v-model="files">
-      <a class="button is-primary">
+    <b-upload v-model="files" v-if="files.length === 0" >
+      <a class="button is-danger">
           <i class="material-icons">camera</i>
           <span>Choisir une photo</span>
       </a>
@@ -71,5 +71,8 @@ export default {
   text-align: center
 }
 
+img {
+  width: 350px
+}
 
 </style>

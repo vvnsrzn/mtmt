@@ -24,8 +24,12 @@
       <div class="column is-one-quarter" v-for="(movie, key) in movies" :key="key">
         <div class="card">
           <div class="card-image">
-            <figure class="image is-4by3">
-              <img v-if="movie.poster_path" v-bind:src="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" alt="Placeholder image">
+            <figure class="image is-square">
+              <img 
+                v-if="movie.poster_path" 
+                v-bind:src="'https://image.tmdb.org/t/p/w500/'+movie.poster_path"
+                  
+              >
               <img v-else src="https://placehold.it/600x600" alt="Placeholder image">
             </figure>
           </div>
@@ -91,10 +95,18 @@
   }
   .box {
     margin: 0 auto;
-    margin-top: 5vh
+    margin-top: 5vh;
+    padding: 3vh
   }
+
+  /* .card {
+    background-image: url("");
+    
+  } */
+
+
   .main {
-    background-image: url("http://mtmt.viviansarazin.com/images/couple.jpeg");
+    background-image: url("http://mtmt.viviansarazin.com/images/cinema.jpeg");
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;

@@ -21,7 +21,7 @@
   </div>
   <div class="container">
     <div class="columns is-multiline">
-      <div class="column is-one-quarter" v-for="(artist, key) in artists" :key="key">
+      <div class="column rounded is-one-quarter" v-for="(artist, key) in artists" :key="key">
           <div class="card-image">
             <figure class="image is-square rounded">
               <img v-if="artist.images[0]" v-bind:src=artist.images[0].url alt="Placeholder image">
@@ -90,10 +90,11 @@
   }
   .box {
     margin: 0 auto;
-    margin-top: 5vh
+    margin-top: 5vh;
+    padding: 3vh
   }
   .main {
-    background-image: url("http://mtmt.viviansarazin.com/images/couple.jpeg");
+    background-image: url("http://mtmt.viviansarazin.com/images/music.jpeg");
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
