@@ -9,6 +9,7 @@
     <p>Ton inscription s'est bien passée.</p>
     <p>Il faut maintenant que tu choissises une photo de profil</p>
     <br />
+
     <br />
     <form @submit.prevent="(e) => {uploadPicture(e)}">
     <b-upload v-model="files" v-if="files.length === 0" >
