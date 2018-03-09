@@ -158,13 +158,22 @@ export default {
     },
 
     postQuizz(datas) {
-      return mtmt
-        .post(`/postquizz/`, datas)
-        .then(res => res.data)
-        .catch(err => {
-          console.error(err);
-          throw err;
-        });
+        return mtmt
+            .post(`/postquizz/`, datas)
+            .then(res => res.data)
+            .catch(err => {
+                console.error(err);
+                throw err;
+            });
+    },
+
+    getCandidates(id) {
+        return mtmt
+            .get(`/getcandidates/${id}`)
+            .then(res => res.data)
+            .catch(err => { 
+                console.error(err);
+                throw err;
+            })
     }
- 
 };

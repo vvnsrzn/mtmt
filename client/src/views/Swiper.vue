@@ -1,7 +1,12 @@
 <template>
   <div class="columns  is-vcentered">
     <div class="column is-one-quarter chat">
-      Messagerie
+      <h1>À toi de jouer</h1>
+      <ul>
+        <li v-for="(candidate, key) in candidates" :key="key">
+          <p>{{candidate._userCandidate.firstName}}</p>
+        </li>
+      </ul>
     </div>
     <div class="column is-one-half">
       <Card 
@@ -67,6 +72,7 @@
           answer: "",
           badResponses: []
         },
+        candidates: {},
         traits: {
           quality: {
             answer: "",
@@ -116,6 +122,7 @@
             this.error = err;
           });
       },
+
       postQuizz(e) {
         api
           .postQuizz({
@@ -127,6 +134,7 @@
           .then(result => {
             this.result = result.message;
             if (result.message === "BRAVO") {
+              this.getCandidates();
               this.success();
             } else {
               this.danger();
@@ -137,6 +145,19 @@
             this.error = err;
           });
       },
+
+      getCandidates() {
+        api
+        .getCandidates(localStorage.getItem("id"))
+        .then(candidates => {
+          console.log(candidates)
+          this.candidates = candidates
+        })
+        .catch(err => {
+            this.error = err;
+        })
+      },
+
       increment() {
         this.counter++;
         this.isQuizzActive = false;
@@ -159,9 +180,7 @@
     },
     beforeMount() {
       this.getMatches();
-
-      
-
+      this.getCandidates();
     }
   };
 </script>
