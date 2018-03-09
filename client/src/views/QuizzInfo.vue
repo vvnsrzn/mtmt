@@ -15,8 +15,8 @@
       :max="100">
     </el-slider>
   </div>
-  <p class="small">Avec 0% tout le monde pourra rentrer en contact avec toi.</p>
-  <p class="small">Avec 100% seul les personnes qui auront répondu correctement à <b>toutes</b> les questions te seront proposées.</p>
+  <p class="small-fix">Avec 0% tout le monde pourra rentrer en contact avec toi.</p>
+  <p class="small-fix">Avec 100% seul les personnes qui auront répondu correctement à <b>toutes</b> les questions te seront proposées.</p>
   <br />
   <p>Mais vu qu'on est super cool, nous te proposons d'inscrire, à chaque question un indice.</p>
   <p>À toi d'être futé.e</p>
@@ -59,8 +59,13 @@ import api from '../api';
 </script>
 
 <style scoped>
-.small {
-  font-size: 1.3rem !important
+
+p {
+  font-size: 1.8rem !important;
+}
+
+.small-fix {
+  font-size: 1.3rem !important;
 }
 
 .box {
