@@ -9,7 +9,7 @@
       <div class="media" v-for="(candidate, key) in candidates" :key="key">
         <div class="media-left">
           <figure class="image is-48x48">
-            <img :src="candidate._userCandidate.photos[0]" class="img-fix" alt="Placeholder image">
+            <img :src="candidate._userCandidate.photos[0]" alt="Placeholder image">
           </figure>
         </div>
         <div class="media-content">
@@ -35,11 +35,11 @@
       <span v-if="this.counter === 0">
         <h2 class="title">Comment ça marche?</h2>
         <p class="details">Clicque sur "Ouvrir le Quizz" pour tenter ta chance avec {{users[this.counter].firstName}} !</p>
-        <img src="https://media.giphy.com/media/ToMjGpKniGqRNLGBrhu/giphy.gif" alt="">
+        <img class="img-fix" src="https://media.giphy.com/media/ToMjGpKniGqRNLGBrhu/giphy.gif" alt="">
       </span>
       <span v-if="this.counter === 5">
         <h2 class="subtitle">Alors? Tu t'en sors?</h2>
-        <img src="https://media.giphy.com/media/Jlt69Ka6SwtH2/giphy.gif" alt="">
+        <img class="img-fix" src="https://media.giphy.com/media/Jlt69Ka6SwtH2/giphy.gif" alt="">
       </span>
       <Quizz
         @hide="isQuizzActive = false"

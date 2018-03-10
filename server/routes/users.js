@@ -124,7 +124,7 @@ router.post("/profile", upload.single("photo"), function(req, res, next) {
     User.findByIdAndUpdate(
         req.user._id,
         {
-            photos: "/uploads/" + req.file.filename,
+            photos: "/uploads/" + req.file.filename
         },
         (err, user) => {
             if (err) {

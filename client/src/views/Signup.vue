@@ -2,7 +2,7 @@
   <div>
     <p>Bienvenue sur MTMT</p>
     <p>Merci de vous connecter via Facebook</p>
-      <a href="http://localhost:3000/api/auth/facebook">
+      <a href="http:///api/auth/facebook">
       Continuer avec Facebook</a>
   </div>
 </template>

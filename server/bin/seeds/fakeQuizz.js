@@ -9,7 +9,6 @@ var randomMovies = require("./random/randomMovies");
 var quality = require("./random/quality");
 var defect = require("./random/defect");
 
-// _id from users
 var users = [];
 User.find({})
     .select({
